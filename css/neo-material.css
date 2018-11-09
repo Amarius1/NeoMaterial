@@ -21,10 +21,9 @@ body
           box-shadow: 0 0 0 12px rgba(0, 0, 0, 0);
      }
 }
-a.btn-outline {
+a {
     text-decoration: none;
 }
-a:visited{ color: gray }
 .rounded
 {
 	 border-radius: 10px 10px 10px 10px;
