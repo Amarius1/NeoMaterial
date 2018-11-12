@@ -36,14 +36,144 @@
 		user-select: none;
 	}
 </style>
+<style>
+  .demo-card
+  {
+    display: flex !important;
+    width: 200px;
+    height: 80px;
+    border-radius: 5px;
+    margin-bottom: 2px;
+    margin-top: 2px;
+    text-align: center;
+  	align-items:center;
+  }
+  .demo-zone
+  {
+    width: 200px;
+  }
+</style>
 <body>
 
 <!--LOOK ON MY WORKS YE MIGHTY AND DESPAIR-->
-<H1 class="center dark-text">Components</H1>
-<a class='btn white dark-text' ripple>Button</a>
-<a class='btn-outline transparent dark-text' ripple>Heart Points</a>
-<a class='btn-flat dark-text' ripple data-ripple-color="#1565c0">Move Minutes</a>
-<a class='btn blue' ripple data-ripple-color='#1a237e'>Google</a>
+<br>
+<H1 style="font-size: 40px" class="center dark-text">Components</H1>
+
+<center>
+<a class='btn-outline rounded-max transparent dark-text' ripple>Colors</a>
+<a class='btn-outline rounded-max transparent dark-text' ripple>Buttons</a>
+<a class='btn-outline rounded-max transparent dark-text' ripple>Cards</a>
+<a class='btn-outline rounded-max transparent dark-text' ripple>Navbars</a>
+<a class='btn-outline rounded-max transparent dark-text' ripple>Icons</a>
+<a class='btn-outline rounded-max transparent dark-text' ripple>Chips</a>
+<a class='btn-outline rounded-max transparent dark-text' ripple>Menus</a>
+<a class='btn-outline rounded-max transparent dark-text' ripple>Mobile</a>
+<a class='btn-outline rounded-max blue-text light-blue' ripple>More</a>
+</center><br><br><br>
+<H1 class="center darker-text">Colors</H1>
+<H3 class="dark-text center container-small">You can easily create your own colors with CSS.</H3>
+<center>
+<a class='btn red' ripple>Button</a>
+<a class='btn purple' ripple>Button</a>
+<a class='btn indigo' ripple>Button</a>
+<a class='btn blue' ripple>Button</a>
+<a class='btn green' ripple>Button</a>
+<a class='btn yellow' ripple>Button</a>
+<a class='btn amber' ripple>Button</a>
+<a class='btn orange' ripple>Button</a>
+<a class='btn grey' ripple>Button</a>
+</center><br>
+<!--CODE-->
+<pre class="container-small rounded">
+<code data-language="html">
+.red
+{
+  background-color: #f44336;
+}
+</code>
+</pre>
+<br><br>
+
+
+<H1 class="center darker-text">Buttons</H1>
+<H3 class="dark-text center container-small">Buttons are a great way to link your pages and they provide a beautiful way users can interact with the content.</H3>
+<H2 class="center dark-text">Filled Button</H2>
+<center>
+  <a class='btn light dark-text' ripple>Raised Button</a>
+  <a class='btn blue1' ripple>Colored Button</a>
+  <a class='btn light dark-text' ripple data-ripple-color='#2962ff'>Custom Ripple Color</a>
+</center>
+<br>
+<!--CODE-->
+<pre class="container-small rounded">
+<code data-language="html">
+<a class='btn light dark-text' ripple>Button</a>
+<a class='btn dark-text blue1' ripple>Colored Button</a>
+<a class='btn light dark-text' ripple data-ripple-color='#2962ff'>Custom Ripple Color</a>
+</code>
+</pre>
+
+<H2 class="center dark-text">Outline Button</H2>
+<center>
+  <a class='btn-outline transparent dark-text' ripple>Outline Button</a>
+  <a class='btn-outline rounded-max transparent dark-text' ripple>Rounded Button</a>
+  <a class='btn-outline blue-text' ripple>Colored Button</a>
+  <a class='btn-outline blue-text light-blue' ripple>Colored Button</a>
+  <a class='btn-outline transparent dark-text' ripple data-ripple-color='#311b92'>Custom Ripple Color</a>
+</center>
+<br>
+<!--CODE-->
+<pre class="container-small rounded">
+<code data-language="html">
+<a class='btn-outline transparent dark-text' ripple>Outline Button</a>
+<a class='btn-outline blue-text' ripple>Colored Button</a>
+<a class='btn-outline blue-text light-blue' ripple>Colored Button</a>
+<a class='btn-outline transparent dark-text' ripple data-ripple-color='#311b92'>Custom Ripple Color</a>
+</code>
+</pre>
+<Br>
+<H2 class="center dark-text">Flat Button</H2>
+<center>
+  <a class='btn-flat dark-text' ripple>Flat Button</a>
+  <a class='btn-flat blue-text' ripple>Colored Button</a>
+  <a class='btn-flat dark-text' ripple data-ripple-color="#d50000">Custom Ripple Color</a>
+
+</center>
+<br>
+<!--CODE-->
+<pre class="container-small rounded">
+<code data-language="html">
+<a class='btn-flat dark-text' ripple>Flat Button</a>
+<a class='btn-flat blue-text' ripple>Colored Button</a>
+<a class='btn-flat dark-text' ripple data-ripple-color="#d50000">Custom Ripple Color</a>
+</code>
+</pre>
+<Br><br>
+
+<H1 class="center darker-text">Cards</H1>
+<H3 class="dark-text center container-small">Cards are very good at containing things like images and text</H3>
+<div id="inline" class="container-small">
+  <div class="card card-size light">
+    This is a simple card
+  </div>
+  <div class="z-depth-1-5 card card-size2">
+    <div class="card-content">
+      <H3 class="darker-text">Card Title</H3>
+      This is a card with a title and actions!
+    </div>
+    <div class="card-actions">
+      <a class='btn-outline blue-text' ripple>Action Button</a>
+      <a class='btn-flat blue-text' ripple>Action Button</a>
+    </div>
+  </div>
+</div>
+ <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+
+
+
+
+
 
 <!--scripts-->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
