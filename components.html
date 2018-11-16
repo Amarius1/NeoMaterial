@@ -37,20 +37,20 @@
 	}
 </style>
 <style>
-  .demo-card
+  .demo-card-size
   {
-    display: flex !important;
-    width: 200px;
-    height: 80px;
-    border-radius: 5px;
-    margin-bottom: 2px;
-    margin-top: 2px;
-    text-align: center;
-  	align-items:center;
+  	width: 200px;
+  	height: 200px;
   }
-  .demo-zone
+  .demo-card-size2
   {
-    width: 200px;
+  	width: 300px;
+  	height: 200px;
+  }
+  .demo-card-size3
+  {
+  	width: 300px;
+  	height: 200px;
   }
 </style>
 <body>
@@ -153,10 +153,10 @@
 <H1 class="center darker-text">Cards</H1>
 <H3 class="dark-text center container-small">Cards are very good at containing things like images and text</H3>
 <div id="inline" class="container-small">
-  <div class="card card-size light">
+  <div class="card demo-card-size">
     This is a simple card
   </div>
-  <div class="z-depth-1-5 card card-size2">
+  <div class="z-depth-1-5 card demo-card-size2">
     <div class="card-content">
       <H3 class="darker-text">Card Title</H3>
       This is a card with a title and actions!
@@ -166,7 +166,20 @@
       <a class='btn-flat blue-text' ripple>Action Button</a>
     </div>
   </div>
+<div class="z-depth-1-5 card demo-card-size3">
+  <div class="media-content">
+    <img class="rounded media" src="https://www.w3schools.com/w3css/img_lights.jpg" width="40%">
+  </div>
+  <div class="card-content">
+    <H3 class="darker-text">Card Title</H3>
+    This is a card with a title and actions!
+  </div>
+  <div class="card-actions">
+    <a class='btn-flat blue-text' ripple>Action Button</a>
+  </div>
 </div>
+</div>
+
  <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 
 
