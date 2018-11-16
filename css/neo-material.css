@@ -248,16 +248,7 @@ pre {
 {
 	color: #2979ff;
 }
-.card-size
-{
-	width: 200px;
-	height: 200px;
-}
-.card-size2
-{
-	width: 400px;
-	height: 200px;
-}
+
 .card-actions
 {
 	position: absolute;
@@ -284,11 +275,25 @@ pre {
 {
 	box-shadow: -1px 4px 6px rgba(0,0,0,.25), 1px 1px 3px rgba(0,0,0,.1);
 	border-radius: 10px;
-	padding: 10px 10px;
 	margin-right: 5px;
 	margin-left: 5px;
 	position: relative;
 	background-color: #fcfcfc;
+}
+.media-content
+{
+	padding: 0px 0px;
+	position: relative;
+	top: 0px;
+	left: 0px;
+	padding-top: 0px;
+	padding-left: 0px;
+	padding-right: 0px;
+	padding-bottom: 5px;
+}
+.media
+{
+	position: relative;
 }
 #inline
 {
@@ -298,6 +303,7 @@ pre {
 {
 	position: relative;
 	top: -20px;
+	padding: 10px 10px;
 }
 .z-depth-0
 {
