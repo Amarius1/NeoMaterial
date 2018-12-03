@@ -30,3 +30,32 @@
         })
     })
 }());
+$(document).ready(function(){
+    $("#tank").click(function(){
+        $("#tank-cut").toggleClass("visiblex");
+		$("#tank-data").toggleClass("visiblex");
+		$("#ariane").toggleClass("blur");
+		$("#boosters").toggleClass("blur");
+		$("#payload").toggleClass("blur");
+    });
+});
+/* When the user clicks on the button,
+toggle between hiding and showing the dropdown content */
+function myFunction() {
+    document.getElementById("myDropdown").classList.toggle("show");
+}
+
+// Close the dropdown menu if the user clicks outside of it
+window.onclick = function(event) {
+  if (!event.target.matches('.cbtn')) {
+
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}
