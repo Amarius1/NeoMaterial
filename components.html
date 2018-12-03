@@ -7,6 +7,7 @@
 	<link href="css/neo-material.css" type="text/css" rel="stylesheet">
   <link href="highlight-code/rainbow.css" type="text/css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	<script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
 </head>
 <style>
@@ -37,20 +38,20 @@
 	}
 </style>
 <style>
-  .demo-card-size
+  .demo-card
   {
-  	width: 200px;
-  	height: 200px;
+    display: flex !important;
+    width: 200px;
+    height: 80px;
+    border-radius: 5px;
+    margin-bottom: 2px;
+    margin-top: 2px;
+    text-align: center;
+  	align-items:center;
   }
-  .demo-card-size2
+  .demo-zone
   {
-  	width: 300px;
-  	height: 200px;
-  }
-  .demo-card-size3
-  {
-  	width: 300px;
-  	height: 200px;
+    width: 200px;
   }
 </style>
 <body>
@@ -152,11 +153,11 @@
 
 <H1 class="center darker-text">Cards</H1>
 <H3 class="dark-text center container-small">Cards are very good at containing things like images and text</H3>
-<div id="inline" class="container-small">
-  <div class="card demo-card-size">
+<div class="container-small">
+  <div class="center-element card card-size light">
     This is a simple card
   </div>
-  <div class="z-depth-1-5 card demo-card-size2">
+  <div class="card center-element card-size2">
     <div class="card-content">
       <H3 class="darker-text">Card Title</H3>
       This is a card with a title and actions!
@@ -166,22 +167,53 @@
       <a class='btn-flat blue-text' ripple>Action Button</a>
     </div>
   </div>
-<div class="z-depth-1-5 card demo-card-size3">
-  <div class="media-content">
-    <img class="rounded media" src="https://www.w3schools.com/w3css/img_lights.jpg" width="40%">
-  </div>
-  <div class="card-content">
-    <H3 class="darker-text">Card Title</H3>
-    This is a card with a title and actions!
-  </div>
-  <div class="card-actions">
-    <a class='btn-flat blue-text' ripple>Action Button</a>
-  </div>
+</div>
+<br><br>
+<H1 class="center darker-text">Navbars</H1>
+<H3 class="dark-text center container-small">Navbars are a great way of linking pages in an elegant way</H3>
+<Br><br>
+<div class=" z-depth-1-5 nav-full">
+<div class="nav-title">
+  <H3 class="darker-text">Navbar</H3>
+</div>
+<div class="nav-buttons">
+  <a class='btn blue dark-text' ripple>Button</a>
+  <a class='btn blue dark-text' ripple>Button</a>
+  <a class='btn blue dark-text' ripple>Button</a>
 </div>
 </div>
+<br><br>
+<div class=" z-depth-1-5 nav-round">
+<div class="nav-title">
+  <H3 class="darker-text">Rounded Navbar</H3>
+</div>
+<div class="nav-buttons">
+  <a class='rounded-max btn blue dark-text' ripple>Button</a>
+  <a class='rounded-max btn blue dark-text' ripple>Button</a>
+  <a class='rounded-max btn blue dark-text' ripple>Button</a>
+</div>
+</div>
+<Br><br>
+<div class=" z-depth-1-5 nav-full">
+<div class="nav-title">
+  <H3 class="darker-text">Navbar with actions</H3>
+</div>
+<div class="nav-buttons">
 
- <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<div class="dropdown">
+  <a onclick="myFunction()" class='cbtn blue dark-text' ripple><i class="material-icons">arrow_drop_down</i></a>
+   <div id="myDropdown" class="scale-up-ver-top dropdown-content rounded">
+     <a href="#">Option</a>
+     <a href="#">Option</a>
+     <a href="#">Option</a>
+   </div>
+</div>
+</div>
+</div>
+<br><br>
+<Br><Br><Br><Br><Br><Br>
 
+<Br><Br><Br>
 
 
 
