@@ -1,4 +1,4 @@
-;(function() {
+(function() {
     const showEvent = (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) ? 'touchstart' : 'mousedown';
     const hideEvent = (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) ? 'touchend' : 'mouseup';
     $(document).on(showEvent, '[ripple]', function(e){
@@ -58,4 +58,21 @@ window.onclick = function(event) {
       }
     }
   }
+}
+/*Fix navbar hamburger menu alignment */
+$('div.nav-title:has(i)').addClass('fix-align1');
+function openNav() {
+    document.getElementById("side-buttons").style.width = "60px";
+    document.getElementsByTagName("BODY")[0].style.marginLeft = "60px";
+    $(".open").css("display", "none");
+    $("#sidenav-title").css("position", "relative").css("left", "5px").css("top", "4px");
+
+
+}
+
+/* Set the width of the side navigation to 0 and the left margin of the page content to 0 */
+function closeNav() {
+    document.getElementById("side-buttons").style.width = "0";
+    document.getElementsByTagName("BODY")[0].style.marginLeft = "0";
+    $(".open").css("display", "inline-flex").css("top", "5px");
 }
