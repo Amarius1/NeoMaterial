@@ -8,6 +8,7 @@
   <link href="highlight-code/rainbow.css" type="text/css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="css/sidebarjs.min.css">
 	<script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
 </head>
 <style>
@@ -55,20 +56,20 @@
   }
 </style>
 <body>
-
+<div id="main">
 <!--LOOK ON MY WORKS YE MIGHTY AND DESPAIR-->
 <br>
 <H1 style="font-size: 40px" class="center dark-text">Components</H1>
 
 <center>
-<a class='btn-outline rounded-max transparent dark-text' ripple>Colors</a>
-<a class='btn-outline rounded-max transparent dark-text' ripple>Buttons</a>
-<a class='btn-outline rounded-max transparent dark-text' ripple>Cards</a>
-<a class='btn-outline rounded-max transparent dark-text' ripple>Navbars</a>
-<a class='btn-outline rounded-max transparent dark-text' ripple>Icons</a>
-<a class='btn-outline rounded-max transparent dark-text' ripple>Chips</a>
-<a class='btn-outline rounded-max transparent dark-text' ripple>Menus</a>
-<a class='btn-outline rounded-max transparent dark-text' ripple>Mobile</a>
+<a class='btn-outline rounded-max  dark-text' ripple>Colors</a>
+<a class='btn-outline rounded-max  dark-text' ripple>Buttons</a>
+<a class='btn-outline rounded-max  dark-text' ripple>Cards</a>
+<a class='btn-outline rounded-max  dark-text' ripple>Navbars</a>
+<a class='btn-outline rounded-max  dark-text' ripple>Icons</a>
+<a class='btn-outline rounded-max  dark-text' ripple>Chips</a>
+<a class='btn-outline rounded-max  dark-text' ripple>Menus</a>
+<a class='btn-outline rounded-max  dark-text' ripple>Mobile</a>
 <a class='btn-outline rounded-max blue-text light-blue' ripple>More</a>
 </center><br><br><br>
 <H1 class="center darker-text">Colors</H1>
@@ -97,7 +98,7 @@
 
 
 <H1 class="center darker-text">Buttons</H1>
-<H3 class="dark-text center container-small">Buttons are a great way to link your pages and they provide a beautiful way users can interact with the content.</H3>
+<H3 class="dark-text center">Buttons are a great way to link your pages and they provide a beautiful way users can interact with the content.</H3>
 <H2 class="center dark-text">Filled Button</H2>
 <center>
   <a class='btn light dark-text' ripple>Raised Button</a>
@@ -116,20 +117,20 @@
 
 <H2 class="center dark-text">Outline Button</H2>
 <center>
-  <a class='btn-outline transparent dark-text' ripple>Outline Button</a>
-  <a class='btn-outline rounded-max transparent dark-text' ripple>Rounded Button</a>
+  <a class='btn-outline dark-text' ripple>Outline Button</a>
+  <a class='btn-outline rounded-max dark-text' ripple>Rounded Button</a>
   <a class='btn-outline blue-text' ripple>Colored Button</a>
   <a class='btn-outline blue-text light-blue' ripple>Colored Button</a>
-  <a class='btn-outline transparent dark-text' ripple data-ripple-color='#311b92'>Custom Ripple Color</a>
+  <a class='btn-outline dark-text' ripple data-ripple-color='#311b92'>Custom Ripple Color</a>
 </center>
 <br>
 <!--CODE-->
 <pre class="container-small rounded">
 <code data-language="html">
-<a class='btn-outline transparent dark-text' ripple>Outline Button</a>
+<a class='btn-outline  dark-text' ripple>Outline Button</a>
 <a class='btn-outline blue-text' ripple>Colored Button</a>
 <a class='btn-outline blue-text light-blue' ripple>Colored Button</a>
-<a class='btn-outline transparent dark-text' ripple data-ripple-color='#311b92'>Custom Ripple Color</a>
+<a class='btn-outline  dark-text' ripple data-ripple-color='#311b92'>Custom Ripple Color</a>
 </code>
 </pre>
 <Br>
@@ -172,7 +173,7 @@
 <H1 class="center darker-text">Navbars</H1>
 <H3 class="dark-text center container-small">Navbars are a great way of linking pages in an elegant way</H3>
 <Br><br>
-<div class=" z-depth-1-5 nav-full">
+<div class=" z-depth-1-5 nav">
 <div class="nav-title">
   <H3 class="darker-text">Navbar</H3>
 </div>
@@ -184,34 +185,85 @@
 </div>
 <br><br>
 <div class=" z-depth-1-5 nav-round">
-<div class="nav-title">
-  <H3 class="darker-text">Rounded Navbar</H3>
-</div>
-<div class="nav-buttons">
-  <a class='rounded-max btn blue dark-text' ripple>Button</a>
-  <a class='rounded-max btn blue dark-text' ripple>Button</a>
-  <a class='rounded-max btn blue dark-text' ripple>Button</a>
-</div>
+  <div class="nav-title">
+    <H3 class="darker-text">Rounded Navbar</H3>
+  </div>
+  <div class="nav-buttons">
+    <a class='rounded-max btn blue dark-text' ripple>Button</a>
+    <a class='rounded-max btn blue dark-text' ripple>Button</a>
+    <a class='rounded-max btn blue dark-text' ripple>Button</a>
+  </div>
 </div>
 <Br><br>
-<div class=" z-depth-1-5 nav-full">
-<div class="nav-title">
-  <H3 class="darker-text">Navbar with actions</H3>
-</div>
-<div class="nav-buttons">
-
-<div class="dropdown">
-  <a onclick="myFunction()" class='cbtn blue dark-text' ripple><i class="material-icons">arrow_drop_down</i></a>
-   <div id="myDropdown" class="scale-up-ver-top dropdown-content rounded">
-     <a href="#">Option</a>
-     <a href="#">Option</a>
-     <a href="#">Option</a>
-   </div>
-</div>
-</div>
+<div class=" z-depth-1-5 nav">
+  <div class="nav-title">
+    <H3 class="darker-text">Navbar with actions</H3>
+  </div>
+  <div class="nav-buttons">
+      <a class='rounded-max btn blue dark-text' ripple>Button</a>
+      <a class='rounded-max btn blue dark-text' ripple>Button</a>
+      <div class="dropdown">
+        <a onclick="myFunction()" class='cbtn blue dark-text' ripple><i class="material-icons">arrow_drop_down</i></a>
+         <div id="myDropdown" class="scale-up-ver-top dropdown-content rounded">
+           <a href="#">Option</a>
+           <a href="#">Option</a>
+           <a href="#">Option</a>
+         </div>
+      </div>
+  </div>
 </div>
 <br><br>
-<Br><Br><Br><Br><Br><Br>
+<H1 class="center darker-text">Menus</H1>
+<H3 class="dark-text center container-small">Menus are a nice way to add navigation buttons without making them stick out too much</H3>
+
+<div class="z-depth-1-5 nav">
+  <div class="nav-title">
+    <i onclick="openNav()" class="open material-icons cbtn-flat darker-text" ripple>chevron_right</i>
+    <H3 id="sidenav-title" class="darker-text">Sidebuttons</H3>
+  </div>
+  <div class="nav-buttons">
+    <a class='rounded-max btn blue dark-text' ripple>Button</a>
+  </div>
+</div>
+
+<div id="side-buttons" class="side-buttons">
+  <i href="javascript:void(0)" class="material-icons darker-text cbtn-flat" onclick="closeNav()" ripple>chevron_left</i>
+  <a class='cbtn blue' ripple><i class="material-icons">face</i></a>
+  <a class='cbtn blue' ripple><i class="material-icons">mail</i></a>
+  <a class='cbtn blue' ripple><i class="material-icons">message</i></a>
+  <a class='cbtn blue' ripple><i class="material-icons">mic_none</i></a>
+  <a class='cbtn blue' ripple><i class="material-icons">perm_identity</i></a>
+
+</div>
+
+<br><br><br>
+
+<div class="nav">
+  <div class="nav-title">
+    <i sidenav-toggle class="material-icons cbtn-flat darker-text" ripple>menu</i>
+    <H3 class="darker-text">Sidenav</H3>
+  </div>
+  <div class="nav-buttons">
+    <a class='rounded-max btn blue dark-text' ripple>Button</a>
+  </div>
+</div>
+<Br><Br><br>
+
+<div sidenav>
+    <nav class="center">
+      <H2 class="darker-text center">Side Nav</H2>
+        <a class='rounded-max btn blue dark-text' ripple>Button</a>
+        <a class='rounded-max btn blue dark-text' ripple>Button</a>
+        <a class='rounded-max btn blue dark-text' ripple>Button</a>
+     </nav>
+</div>
+
+
+
+<Br><Br><Br>
+
+
+  <Br><Br><Br><Br><Br><Br><Br><Br><Br><Br><Br><Br><Br><Br><Br><Br><Br><Br><Br><Br><Br><Br><Br><Br><Br><Br><Br><Br><Br><Br><Br><Br><Br>
 
 <Br><Br><Br>
 
@@ -219,12 +271,17 @@
 
 
 
-
+</div>
 <!--scripts-->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="js/neo-material.js"></script>
+<script src="js/sidebarjs.min.js"></script>
 <script src="highlight-code/rainbow-custom.min.js"></script>
-
+<script>
+ // Init SidebarJS
+ var sidenav = new sidenav.SidebarElement();
+ </script>
+<script>
 </body>
 
 </html>
