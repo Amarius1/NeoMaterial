@@ -40,6 +40,7 @@ body
 {
 	font-family: 'Montserrat', sans-serif;
 	margin: 0px;
+	position: relative;
 }
 div
 {
@@ -83,7 +84,7 @@ a {
 {
 	 border-radius: 9.5px;
 }
-.nav
+nav
 {
 	position: relative;
 	background-color: #eeeeee;
@@ -101,39 +102,54 @@ a {
 	-o-transition: all 0.25s ease-in-out;
 	transition: all 0.25s ease-in-out;
 }
-.nav-round
+nav.rounded
 {
 	background-color: #eeeeee;
-	width: 99%;
-	border-radius: 30px;
-	position: relative; left: 50%; transform: translate(-50%, 0%);
+	width: 99% !important;
+	border-radius: 30px !important;
+	position: relative; left: 50%; transform: translate(-50%, 0%) !important;
 	height: 60px;
 	z-index: 100;
-	box-shadow: 0 1px 3px 1px rgba(0, 0, 0, 0.15);
 }
-.nav-round>.nav-buttons {
+nav.rounded>.nav-buttons {
 	position: absolute;
   right: 10px !important;
 }
-.nav-round>.nav-title {
-	position: absolute;
+nav.rounded>.nav-title {
+	position: relative;
 	left: 10px !important;
+}
+.left
+{
+	position: absolute;
+	left: 5px;
+}
+.right
+{
+	position: absolute;
+	right: 5px;
 }
 .nav-buttons
 {
 	position: absolute;
 	right: 5px;
 	top: 12px;
+	display: inline-flex;
 }
 .nav-title
 {
-	position: absolute;
+	position: relative;
 	left: 5px;
 	top: 0px;
+	display: inline-flex;
 }
 .rounded-max
 {
 	border-radius: 30px !important;
+}
+i
+{
+	height: 24px;
 }
 .container
 {
@@ -154,10 +170,19 @@ a {
 {
 	border-color: #2196f3;
 }
+.text-container
+{
+	height: 20px;
+}
 @media only screen and (max-width: 768px) {
 	.container
 	{
 		margin-right: 1%;
+		margin-left: 1%;
+	}
+	.container-small
+	{
+		margin-right: 4%;
 		margin-left: 1%;
 	}
 	.card-size2
@@ -172,6 +197,21 @@ a {
 	{
 		display: none !important;
 	}
+	.nav-title
+	{
+			position: relative;
+			left: 50%;
+			transform: translate(-50%, 0%);
+	}
+	nav.rounded>.nav-title {
+		position: relative !important;
+		left: 50% !important; transform: translate(-50%, 0%) !important;
+	}
+	.text-container
+	{
+		height: 80px;
+	}
+
 }
 pre {
   overflow: auto;
@@ -445,25 +485,25 @@ pre {
 	top: -4px !important;
 	right: 0px;
 }
-.dropdown>.cbtn{
-	position: relative;
-	top: -4px !important;
-	right: 0px;
+.nav-buttons>.btn
+{
+	height: 23px;
 }
-.nav-buttons>.cbtn{
-	position: absolute;
-	top: -4px !important;
-	right: 0px;
+.nav-buttons>.dropdown
+{
+	position: relative;
+	top: -4px;
 }
 .nav-title>H3
 {
 	display: inline-flex !important;
 }
 
-/* The container <div> - needed to position the dropdown content */
 .dropdown {
     position: relative;
-    display: inline-block;
+    display: inline-flex;
+		left: 0px;
+		top: 0px;
 		-webkit-animation: scale-out-ver-top 0.1s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
 						animation: scale-out-ver-top 0.1s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
 
@@ -564,56 +604,34 @@ material-icons
 	top: -1.5px;
 	left: 0px;
 }
-.side-buttons {
-    height: 100%; /* 100% Full-height */
-    width: 0; /* 0 width - change this with JavaScript */
-    position: fixed; /* Stay in place */
-    z-index: 999; /* Stay on top */
-    top: 0; /* Stay at the top */
-    left: 0;
-    background-color: #fafafa; /* Black*/
-    overflow-x: hidden; /* Disable horizontal scroll */
-    transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
-		outline:none;
-		-webkit-box-shadow: 0 5px 13px rgba(0, 0, 0, 0.12), 0 3px 3px rgba(0, 0, 0, 0.24);
-	  -moz-box-shadow: 0 5px 13px rgba(0, 0, 0, 0.12), 0 3px 3px rgba(0, 0, 0, 0.24);
-	  -ms-box-shadow: 0 5px 13px rgba(0, 0, 0, 0.12), 0 3px 3px rgba(0, 0, 0, 0.24);
-	  -o-box-shadow: 0 5px 13px rgba(0, 0, 0, 0.12), 0 3px 32px rgba(0, 0, 0, 0.24);
-	  box-shadow: 0 5px 13px rgba(0, 0, 0, 0.12), 0 3px 3px rgba(0, 0, 0, 0.24);
-	  -webkit-transition: all 0.25s ease-in-out;
-	  -moz-transition: all 0.25s ease-in-out;
-	  -ms-transition: all 0.25s ease-in-out;
-	  -o-transition: all 0.25s ease-in-out;
-	  transition: all 0.25s ease-in-out;
-}
-
-/* The navigation menu links */
-.side-buttons a {
-
-		margin-left: 9px;
-		margin-right: 5px;
-		margin-top: 5px;
-		margin-bottom: 5px;
-    text-decoration: none;
-    display: inline-block;
-    transition: 0.3s;
-}
-/* Position and style the close button (top right corner) */
-.side-buttons .cbtn-flat {
-    margin-top: 8px;
-    margin-left: 9px;
-		margin-bottom: 5px;
-}
-
-/* Style page content - use this if you want to push the page content to the right when you open the side navigation */
-body {
-    transition: margin-left .5s;
-}
-
-/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
-
-.sidenav-title
+.nav-title i ~ H3
 {
 	position: relative;
-	top: 1px !absolute;
+	top: 2px;
+}
+.side-buttons
+{
+	background-color: #ffffff;
+	z-index: 999;
+	box-shadow: 1px 0 1px rgba(0,0,0,.2);
+
+}
+a {
+	-webkit-touch-callout: none;
+	 -webkit-user-select: none;
+	 -khtml-user-select: none;
+	 -moz-user-select: none;
+	 -ms-user-select: none;
+	 user-select: none;
+	 -webkit-tap-highlight-color: rgba(0,100,255,0.1);
+}
+.side-buttons>.cbtn-flat
+{
+	margin-left: 9px;
+	margin-top: 9px;
+}
+.side-buttons>.cbtn
+{
+	margin-left: 9px;
+	margin-top: 9px;
 }
