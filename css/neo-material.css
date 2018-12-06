@@ -623,7 +623,7 @@ a {
 	 -moz-user-select: none;
 	 -ms-user-select: none;
 	 user-select: none;
-	 -webkit-tap-highlight-color: rgba(0,100,255,0.1);
+	 -webkit-tap-highlight-color: transparent;
 }
 .side-buttons>.cbtn-flat
 {
