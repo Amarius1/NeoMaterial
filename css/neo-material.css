@@ -635,3 +635,38 @@ a {
 	margin-left: 9px;
 	margin-top: 9px;
 }
+.accordion {
+    background-color: #ffffff;
+    color: #616161;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    text-align: left;
+		border-top: 0.5px solid #ddd;
+    border-right: 0.5px solid #ddd;
+    border-left: 0.5px solid #ddd;
+		border-bottom: 0px solid #ddd;
+    outline: none;
+    transition: 0.4s;
+		font-size: 17px;
+}
+
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+.accordion:hover {
+    background-color: #fafafa;
+}
+
+/* Style the accordion panel. Note: hidden by default */
+.panel {
+    padding: 0 18px;
+    background-color: #ffffff;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+		border-top: 0.5px solid #ddd;
+		
+}
+.panel > :not(marquee){
+    margin-top: 5px;
+		margin-bottom: 5px;
+}
