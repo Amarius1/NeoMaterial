@@ -30,15 +30,6 @@
         })
     })
 }());
-$(document).ready(function(){
-    $("#tank").click(function(){
-        $("#tank-cut").toggleClass("visiblex");
-		$("#tank-data").toggleClass("visiblex");
-		$("#ariane").toggleClass("blur");
-		$("#boosters").toggleClass("blur");
-		$("#payload").toggleClass("blur");
-    });
-});
 /* When the user clicks on the button,
 toggle between hiding and showing the dropdown content */
 function myFunction() {
@@ -59,16 +50,9 @@ window.onclick = function(event) {
     }
   }
 }
-/*Fix navbar hamburger menu alignment */
-$('div.nav-title:has(i)').addClass('fix-align1');
-function openNav() {
-    document.getElementById("side-buttons").style.width = "60px";
-    document.getElementsByTagName("BODY")[0].style.marginLeft = "60px";
-    $(".open").css("display", "none");
-    $("#sidenav-title").css("position", "relative").css("left", "5px").css("top", "4px");
+/*Fix buttons alignment */
+$('div.nav-title:has(i)').addClass('responsive-align');
 
-
-}
 
 /* Set the width of the side navigation to 0 and the left margin of the page content to 0 */
 function closeNav() {
