@@ -55,12 +55,12 @@
     width: 200px;
   }
 </style>
-<body>
-<div id="main">
+<body class="push shrink">
 <!--LOOK ON MY WORKS YE MIGHTY AND DESPAIR-->
 <br>
 <H1 style="font-size: 40px" class="center dark-text">Components</H1>
 
+<div class="text-container">
 <center>
 <a class='btn-outline rounded-max  dark-text' ripple>Colors</a>
 <a class='btn-outline rounded-max  dark-text' ripple>Buttons</a>
@@ -71,7 +71,9 @@
 <a class='btn-outline rounded-max  dark-text' ripple>Menus</a>
 <a class='btn-outline rounded-max  dark-text' ripple>Mobile</a>
 <a class='btn-outline rounded-max blue-text light-blue' ripple>More</a>
-</center><br><br><br>
+</center>
+</div><br><br><br>
+
 <H1 class="center darker-text">Colors</H1>
 <H3 class="dark-text center container-small">You can easily create your own colors with CSS.</H3>
 <center>
@@ -153,7 +155,7 @@
 <Br><br>
 
 <H1 class="center darker-text">Cards</H1>
-<H3 class="dark-text center container-small">Cards are very good at containing things like images and text</H3>
+<H3 class="text-container dark-text center container-small">Cards are very good at containing things like images and text</H3>
 <div class="container-small">
   <div class="center-element card card-size light">
     This is a simple card
@@ -171,20 +173,23 @@
 </div>
 <br><br>
 <H1 class="center darker-text">Navbars</H1>
-<H3 class="dark-text center container-small">Navbars are a great way of linking pages in an elegant way</H3>
+<H3 class="text-container dark-text center container-small">Navbars are a great way of linking pages in an elegant way</H3>
 <Br><br>
-<div class=" z-depth-1-5 nav">
-<div class="nav-title">
-  <H3 class="darker-text">Navbar</H3>
-</div>
-<div class="nav-buttons">
-  <a class='btn blue dark-text' ripple>Button</a>
-  <a class='btn blue dark-text' ripple>Button</a>
-  <a class='btn blue dark-text' ripple>Button</a>
-</div>
-</div>
+
+<nav>
+  <div class="nav-title">
+    <H3 class="darker-text">Navbar</H3>
+  </div>
+  <div class="nav-buttons">
+    <a class='btn blue dark-text' ripple>Button</a>
+    <a class='btn blue dark-text' ripple>Button</a>
+    <a class='btn blue dark-text' ripple>Button</a>
+  </div>
+</nav>
+
 <br><br>
-<div class=" z-depth-1-5 nav-round">
+
+<nav class="rounded">
   <div class="nav-title">
     <H3 class="darker-text">Rounded Navbar</H3>
   </div>
@@ -193,9 +198,11 @@
     <a class='rounded-max btn blue dark-text' ripple>Button</a>
     <a class='rounded-max btn blue dark-text' ripple>Button</a>
   </div>
-</div>
+</nav>
+
 <Br><br>
-<div class=" z-depth-1-5 nav">
+
+<nav>
   <div class="nav-title">
     <H3 class="darker-text">Navbar with actions</H3>
   </div>
@@ -211,77 +218,81 @@
          </div>
       </div>
   </div>
-</div>
+</nav>
 <br><br>
 <H1 class="center darker-text">Menus</H1>
-<H3 class="dark-text center container-small">Menus are a nice way to add navigation buttons without making them stick out too much</H3>
+<H3 class="text-container dark-text center container-small">Menus are a nice way to add navigation buttons without making them stick out too much</H3>
 
-<div class="z-depth-1-5 nav">
-  <div class="nav-title">
-    <i onclick="openNav()" class="open material-icons cbtn-flat darker-text" ripple>chevron_right</i>
-    <H3 id="sidenav-title" class="darker-text">Sidebuttons</H3>
-  </div>
-  <div class="nav-buttons">
-    <a class='rounded-max btn blue dark-text' ripple>Button</a>
-  </div>
-</div>
 
-<div id="side-buttons" class="side-buttons">
-  <i href="javascript:void(0)" class="material-icons darker-text cbtn-flat" onclick="closeNav()" ripple>chevron_left</i>
-  <a class='cbtn blue' ripple><i class="material-icons">face</i></a>
-  <a class='cbtn blue' ripple><i class="material-icons">mail</i></a>
-  <a class='cbtn blue' ripple><i class="material-icons">message</i></a>
-  <a class='cbtn blue' ripple><i class="material-icons">mic_none</i></a>
-  <a class='cbtn blue' ripple><i class="material-icons">perm_identity</i></a>
-
-</div>
 
 <br><br><br>
 
-<div class="nav">
+<nav>
   <div class="nav-title">
-    <i sidenav-toggle class="material-icons cbtn-flat darker-text" ripple>menu</i>
+    <i class="material-icons cbtn-flat darker-text" sidenav-toggle ripple>menu</i>
     <H3 class="darker-text">Sidenav</H3>
   </div>
   <div class="nav-buttons">
     <a class='rounded-max btn blue dark-text' ripple>Button</a>
   </div>
-</div>
+</nav>
+
 <Br><Br><br>
 
 <div sidenav>
-    <nav class="center">
+    <div class="center">
       <H2 class="darker-text center">Side Nav</H2>
         <a class='rounded-max btn blue dark-text' ripple>Button</a>
         <a class='rounded-max btn blue dark-text' ripple>Button</a>
         <a class='rounded-max btn blue dark-text' ripple>Button</a>
-     </nav>
+     </div>
 </div>
 
 
 
 <Br><Br><Br>
 
+  <nav>
+    <div class="nav-title">
+      <i href="#buttons" class="side-btn-action material-icons cbtn-flat darker-text" ripple>web</i>
+      <H3 class="darker-text">Side Buttons</H3>
+    </div>
+    <div class="nav-buttons">
+      <a class='rounded-max btn blue dark-text' ripple>Button</a>
+    </div>
+  </nav>
 
-  <Br><Br><Br><Br><Br><Br><Br><Br><Br><Br><Br><Br><Br><Br><Br><Br><Br><Br><Br><Br><Br><Br><Br><Br><Br><Br><Br><Br><Br><Br><Br><Br><Br>
+
+<nav id="buttons" class="side-buttons">
+    <i id="close" class="side-btn-action material-icons cbtn-flat darker-text" ripple>close</i>
+    <a class='cbtn blue' ripple><i class="material-icons">face</i></a>
+    <a class='cbtn blue' ripple><i class="material-icons">mail</i></a>
+    <a class='cbtn blue' ripple><i class="material-icons">message</i></a>
+    <a class='cbtn blue' ripple><i class="material-icons">mic_none</i></a>
+    <a class='cbtn blue' ripple><i class="material-icons">perm_identity</i></a>
+
+</nav>
+
+<Br><Br><Br><Br><Br><Br><Br><Br><Br><Br><Br><Br><Br><Br><Br><Br><Br><Br><Br><Br><Br><Br><Br><Br><Br><Br><Br><Br><Br><Br><Br><Br><Br><Br><Br>
 
 <Br><Br><Br>
 
-
-
-
-
-</div>
 <!--scripts-->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="js/neo-material.js"></script>
 <script src="js/sidebarjs.min.js"></script>
+<script src="js/bigSlide.js"></script>
 <script src="highlight-code/rainbow-custom.min.js"></script>
 <script>
  // Init SidebarJS
  var sidenav = new sidenav.SidebarElement();
  </script>
-<script>
+ <script>
+    $(document).ready(function() {
+        $('.side-btn-action').bigSlide();
+    });
+</script>
+
 </body>
 
 </html>
