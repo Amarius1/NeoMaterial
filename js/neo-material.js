@@ -69,3 +69,10 @@ for (i = 0; i < acc.length; i++) {
     }
   });
 }
+document.addEventListener("DOMContentLoaded", function(){
+	$("#load-wrapper").delay(1400).fadeOut('slow');
+
+	$("#loader")
+		.delay(1200)
+		.fadeOut();
+});
