@@ -56,43 +56,58 @@
   }
 </style>
 
-<body>
+<body class="push shrink">
 
 
 
-  <div class="nav">
+  <nav>
     <div class="nav-title">
-      <i onclick="openNav()" class="open material-icons cbtn-flat darker-text" ripple>chevron_right</i>
-      <H3 class="darker-text sidenav-title">Sidebuttons</H3>
+      <i href="#buttons" class="side-btn-action material-icons cbtn-flat darker-text" ripple>web</i>
+      <H3 class="darker-text">Side Buttons</H3>
     </div>
     <div class="nav-buttons">
       <a class='rounded-max btn blue dark-text' ripple>Button</a>
     </div>
-  </div>
+  </nav>
 
-  <div id="side-buttons" class="side-buttons">
-    <i href="javascript:void(0)" class="material-icons darker-text cbtn-flat" onclick="closeNav()" ripple>chevron_left</i>
+
+<nav id="buttons" class="side-buttons">
+    <i id="close" class="side-btn-action material-icons cbtn-flat darker-text" ripple>close</i>
     <a class='cbtn blue' ripple><i class="material-icons">face</i></a>
     <a class='cbtn blue' ripple><i class="material-icons">mail</i></a>
     <a class='cbtn blue' ripple><i class="material-icons">message</i></a>
     <a class='cbtn blue' ripple><i class="material-icons">mic_none</i></a>
     <a class='cbtn blue' ripple><i class="material-icons">perm_identity</i></a>
 
+</nav>
+
+<div class="center" id="load-wrapper">
+</div>
+  <div class="center" id="loader">
+    <H1 class="darker-text">Neo Material</H1>
+    <div class="load-bar">
+    <div class="bar"></div>
+    <div class="bar"></div>
+    <div class="bar"></div>
   </div>
+</div>
 
-
-<H1> This is a test page! </H1>
 
 <!--scripts-->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="js/neo-material.js"></script>
 <script src="js/sidebarjs.min.js"></script>
+<script src="js/bigSlide.js"></script>
 <script src="highlight-code/rainbow-custom.min.js"></script>
 <script>
  // Init SidebarJS
  var sidenav = new sidenav.SidebarElement();
  </script>
-<script>
+ <script>
+    $(document).ready(function() {
+        $('.side-btn-action').bigSlide();
+    });
+</script>
 </body>
 
 </html>
