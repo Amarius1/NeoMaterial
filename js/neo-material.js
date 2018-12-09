@@ -1,3 +1,4 @@
+//RIPPLE
 (function() {
     const showEvent = (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) ? 'touchstart' : 'mousedown';
     const hideEvent = (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) ? 'touchend' : 'mouseup';
@@ -30,8 +31,7 @@
         })
     })
 }());
-/* When the user clicks on the button,
-toggle between hiding and showing the dropdown content */
+//DROPDOWN
 function myFunction() {
     document.getElementById("myDropdown").classList.toggle("show");
 }
@@ -54,7 +54,7 @@ window.onclick = function(event) {
 $('div.nav-title:has(i)').addClass('responsive-align');
 
 
-/* Set the width of the side navigation to 0 and the left margin of the page content to 0 */
+//ACCORDION
 var acc = document.getElementsByClassName("accordion");
 var i;
 
@@ -69,10 +69,40 @@ for (i = 0; i < acc.length; i++) {
     }
   });
 }
+//PRELOADER
 document.addEventListener("DOMContentLoaded", function(){
-	$("#load-wrapper").delay(1400).fadeOut('slow');
+	$("#load-wrapper").delay(1200).fadeOut('slow');
 
 	$("#loader")
-		.delay(1200)
+		.delay(1000)
 		.fadeOut();
 });
+//DARK THEME
+$("#dark").change(function(){
+    if($(this).is(":checked")){
+        if($("#dark").is(":checked")){
+            $('body,div.form__label-outlined').addClass("dark");
+            $('button.accordion,div.card,a.light').addClass("dark2");
+
+
+        }
+    }
+});
+//LIGHT THEME
+$("#light").change(function(){
+    if($(this).is(":checked")){
+        if($("#light").is(":checked")){
+              $('body,div.form__label-outlined').removeClass("dark");
+              $('button.accordion,div.card,a.light').removeClass("dark2");
+        }
+    }
+});
+
+// assign function to onclick property of checkbox
+document.getElementById('dark2').onclick = function() {
+    if ( this.checked ) {
+          $('body,div.form__label-outlined').addClass("dark");
+    } else {
+        $('body,div.form__label-outlined').removeClass("dark");
+    }
+};
