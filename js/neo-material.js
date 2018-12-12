@@ -82,18 +82,36 @@ $("#dark").change(function(){
     if($(this).is(":checked")){
         if($("#dark").is(":checked")){
             $('body,div.form__label-outlined').addClass("dark");
-            $('button.accordion,div.card,a.light').addClass("dark2");
-
-
+            $('button.accordion,div.card,div.panel').addClass("dark2");
+            $('H1,H2,H3,H4,H5').removeClass("dark-text").addClass("white-text");
+            $('nav').addClass("dark2");
+            $('i').addClass("white-text");
+            $('div.sidenav-bkg,a.light').addClass("dark3");
+            $('a.light').addClass("white-text");
+            $('button.accordion,a.btn').addClass("white-text");
+            $('p,span,div.card,a.btn,a.btn-outline,div.form__label-outlined').addClass("light-text");
+            $('input.form__field-outlined').addClass("form__field-outlined-dark");
+            $('input.form__field,textarea.form__field').addClass("form__field-dark");
         }
     }
 });
+
+
 //LIGHT THEME
 $("#light").change(function(){
     if($(this).is(":checked")){
         if($("#light").is(":checked")){
-              $('body,div.form__label-outlined').removeClass("dark");
-              $('button.accordion,div.card,a.light').removeClass("dark2");
+          $('body,div.form__label-outlined').removeClass("dark");
+          $('button.accordion,div.card,div.panel').removeClass("dark2");
+          $('H1,H2,H3,H4,H5').addClass("dark-text").removeClass("white-text");
+          $('nav').removeClass("dark2");
+          $('i').removeClass("white-text");
+          $('div.sidenav-bkg,a.light').removeClass("dark3");
+          $('a.light').removeClass("white-text");
+          $('button.accordion,a.btn').removeClass("white-text");
+          $('p,span,div.card,a.btn,a.btn-outline,div.form__label-outlined').removeClass("light-text");
+          $('input.form__field-outlined').removeClass("form__field-outlined-dark");
+          $('input.form__field,textarea.form__field').removeClass("form__field-dark");
         }
     }
 });
@@ -101,8 +119,30 @@ $("#light").change(function(){
 // assign function to onclick property of checkbox
 document.getElementById('dark2').onclick = function() {
     if ( this.checked ) {
-          $('body,div.form__label-outlined').addClass("dark");
+      $('body,div.form__label-outlined').addClass("dark");
+      $('button.accordion,div.card,div.panel').addClass("dark2");
+      $('H1,H2,H3,H4,H5').removeClass("dark-text").addClass("white-text");
+      $('nav').addClass("dark2");
+      $('i').addClass("white-text");
+      $('div.sidenav-bkg,a.light').addClass("dark3");
+      $('a.light').addClass("white-text");
+      $('button.accordion,a.btn').addClass("white-text");
+      $('p,span,div.card,a.btn,a.btn-outline,div.form__label-outlined').addClass("light-text");
+      $('input.form__field-outlined').addClass("form__field-outlined-dark");
+      $('input.form__field,textarea.form__field').addClass("form__field-dark");
+
     } else {
-        $('body,div.form__label-outlined').removeClass("dark");
+      $('body,div.form__label-outlined').removeClass("dark");
+      $('button.accordion,div.card,div.panel').removeClass("dark2");
+      $('H1,H2,H3,H4,H5').addClass("dark-text").removeClass("white-text");
+      $('nav').removeClass("dark2");
+      $('i').removeClass("white-text");
+      $('div.sidenav-bkg,a.light').removeClass("dark3");
+      $('a.light').removeClass("white-text");
+      $('button.accordion,a.btn').removeClass("white-text");
+      $('p,span,div.card,a.btn,a.btn-outline,div.form__label-outlined').removeClass("light-text");
+      $('input.form__field-outlined').removeClass("form__field-outlined-dark");
+      $('input.form__field,textarea.form__field').removeClass("form__field-dark");
+
     }
 };
