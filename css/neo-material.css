@@ -350,7 +350,7 @@ pre {
 }
 .light-text
 {
-  color: #eeeeee;
+  color: #eeeeee !important;
 }
 .btn.blue1
 {
@@ -364,11 +364,11 @@ pre {
 .light
 {
   background-color: #f5f5f5;
-	color: #757575 !important;
+	color: #757575;
 }
 .blue-text
 {
-	color: #2979ff;
+	color: #2979ff !important;
 }
 .card-size
 {
@@ -389,15 +389,15 @@ pre {
 }
 .btn-outline:not(.light-blue):hover
 {
-	background-color: #f5f5f5;
+	background-color: rgba(155,155,155,0.1);
 }
 .btn-flat:hover
 {
-	background-color: #fafafa;
+	background-color: rgba(155,155,155,0.1);
 }
 .btn-flat.blue-text:hover
 {
-	background-color: #f6f6f6;
+	background-color: rgba(155,155,155,0.1);
 }
 .card-actions *
 {
@@ -799,6 +799,18 @@ i
   background: transparent;
   transition: border-color 0.2s;
 }
+.form__field-dark {
+  font-family: inherit;
+  width: 100%;
+  border: 0;
+  border-bottom: 1px solid #d2d2d2;
+  outline: 0;
+  font-size: 16px;
+  color: #eeeeee;
+  padding: 7px 0;
+  background: transparent;
+  transition: border-color 0.2s;
+}
 
 .form__field::placeholder {
   color: transparent;
@@ -847,7 +859,23 @@ textarea { resize: vertical; max-height: 150px; min-height: 100px; }
   background: transparent;
   transition: all 0.2s;
 }
-
+.form__field-outlined-dark
+{
+	font-family: inherit;
+	width: 100%;
+	border: 0;
+	border-top: 2px solid #eeeeee !important;
+	border-bottom: 2px solid #eeeeee !important;
+	border-left: 2px solid #eeeeee !important;
+	border-right: 2px solid #eeeeee !important;
+	border-radius: 9.5px;
+	outline: 0;
+	font-size: 16px;
+	color: #eeeeee !important;
+	padding: 12px 9px;
+	background: transparent;
+	transition: all 0.2s;
+}
 .form__field-outlined::placeholder {
   color: transparent;
 }
@@ -874,16 +902,16 @@ div.form__label-outlined,
 }
 
 .form__field-outlined:focus ~ .form__label-outlined {
-  color: #4285F4;
+  color: #4285F4 !important;
 	font-weight: 600;
 	transition: all 0.25s;
 }
 
 .form__field-outlined:focus {
-  border-top: 2px solid #4285F4;
-	border-bottom: 2px solid #4285F4;
-	border-left: 2px solid #4285F4;
-	border-right: 2px solid #4285F4;
+  border-top: 2px solid #4285F4 !important;
+	border-bottom: 2px solid #4285F4 !important;
+	border-left: 2px solid #4285F4 !important;
+	border-right: 2px solid #4285F4 !important;
 	border-radius: 9.5px;
 	padding: 12px 9px;
 	transition: all 0.25s;
@@ -977,7 +1005,24 @@ label.form__label-filled::before {
 	 	font-family: 'Montserrat', sans-serif;
 
 }
+
 :focus {
   outline-color: transparent;
   outline-style: none;
+}
+.white-text
+{
+	color: white;
+}
+.sidenav-bkg
+{
+	height: 100%;
+	width: 100%;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+}
+.dark3
+{
+	background-color: #0E0E0E;
 }
