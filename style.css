@@ -1,0 +1,9 @@
+audio { width: 70%;}
+@media only screen and (max-width: 768px) {
+	audio { width: 99%;}
+  .handwrite
+  {
+    font-size: 39px !important;
+  }
+
+}
