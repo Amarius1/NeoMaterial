@@ -56,41 +56,53 @@
   }
 </style>
 
-<body class="push shrink">
+<body>
+
+  <div class="wrapper">
+    <h1>Neo Material</h1>
+
+    <i class="material-icons cbtn-flat white-text" onclick="toggleMenu()" ripple>menu</i>
+    <section class="one" onclick="goToPage(0)">
+      <h1>Profile</h1>
+    </section>
+    <section class="two" onclick="goToPage(1)">
+      <h1>Friends</h1>
+    </section>
+    <section class="three" onclick="goToPage(2)">
+      <h1>Messages</h1>
+    </section>
+    <section class="four" onclick="goToPage(3)">
+      <h1>Settings</h1>
 
 
 
-  <nav>
-    <div class="nav-title">
-      <i href="#buttons" class="side-btn-action material-icons cbtn-flat darker-text" ripple>web</i>
-      <H3 class="darker-text">Side Buttons</H3>
-    </div>
-    <div class="nav-buttons">
-      <a class='rounded-max btn blue dark-text' ripple>Button</a>
-    </div>
-  </nav>
+
+        <div class="card card-size2">
+          <div class="card-content">
+            <H3 class="darker-text">Card Title</H3>
+            This is a card with a title and actions!
+          </div>
+          <div class="card-actions">
+            <a class='btn-outline blue-text' ripple>Action Button</a>
+            <a class='btn-flat blue-text' ripple>Action Button</a>
+          </div>
+        </div>
+        <div class="card card-size2">
+          <div class="card-content">
+            <H3 class="darker-text">Card Title</H3>
+            This is a card with a title and actions!
+          </div>
+          <div class="card-actions">
+            <a class='btn-outline blue-text' ripple>Action Button</a>
+            <a class='btn-flat blue-text' ripple>Action Button</a>
+          </div>
+        </div>
 
 
-<nav id="buttons" class="side-buttons">
-    <i id="close" class="side-btn-action material-icons cbtn-flat darker-text" ripple>close</i>
-    <a class='cbtn blue' ripple><i class="material-icons">face</i></a>
-    <a class='cbtn blue' ripple><i class="material-icons">mail</i></a>
-    <a class='cbtn blue' ripple><i class="material-icons">message</i></a>
-    <a class='cbtn blue' ripple><i class="material-icons">mic_none</i></a>
-    <a class='cbtn blue' ripple><i class="material-icons">perm_identity</i></a>
 
-</nav>
-
-<div class="center" id="load-wrapper">
-</div>
-  <div class="center" id="loader">
-    <H1 class="darker-text">Neo Material</H1>
-    <div class="load-bar">
-    <div class="bar"></div>
-    <div class="bar"></div>
-    <div class="bar"></div>
+    </section>
   </div>
-</div>
+
 
 
 <!--scripts-->

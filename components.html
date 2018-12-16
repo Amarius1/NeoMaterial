@@ -3,7 +3,6 @@
   <title>Neo Material</title><!--down of a brave new world-->
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 	<link rel="icon" href="icon.png">
-	<link href="preloader.css" type="text/css" rel="stylesheet">
 	<link href="css/neo-material.css" type="text/css" rel="stylesheet">
   <link href="highlight-code/rainbow.css" type="text/css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
@@ -57,16 +56,6 @@
 </style>
 <body class="push shrink">
 <!--LOOK ON MY WORKS YE MIGHTY AND DESPAIR-->
-<div class="center" id="load-wrapper">
-</div>
-  <div class="center" id="loader">
-    <H1 class="darker-text">Neo Material</H1>
-    <div class="load-bar">
-    <div class="bar"></div>
-    <div class="bar"></div>
-    <div class="bar"></div>
-  </div>
-</div>
 
 <br>
 <H1 style="font-size: 40px" class="center dark-text">Components</H1>
@@ -165,7 +154,7 @@
 </pre>
 <Br><br>
 
-<H1 class="center darker-text">Cards</H1>
+<H1 class="center white-text">Cards</H1>
 <H3 class="text-container dark-text center container-small">Cards are very good at containing things like images and text</H3>
 <div class="container-small">
   <div class="center-element card card-size light">
@@ -307,6 +296,10 @@
 
 </nav>
 
+
+<br><br>
+
+
 <Br><Br><Br>
   <H2 class="center dark-text">Accordions</H2>
 
@@ -356,14 +349,12 @@
 
 
       <br><Br>
-      <div class="container">
+      <div class="center container">
       <h2 class="darker-text">Custom Radio Buttons</h2>
-      <input type="radio" class="form__style" name="rb" id="rb1" />
-      <label for="rb1" class="form__label-filled">Apple</label>
-      <input type="radio" class="form__style" name="rb" id="rb2" />
-      <label for="rb2" class="form__label-filled">Xiaomi</label>
-      <input type="radio" class="form__style" name="rb" id="rb3" />
-      <label for="rb3" class="form__label-filled">Samsung</label>
+      <input type="radio" class="form__style" name="theme" id="dark" />
+      <label for="dark" class="form__label-filled">Dark</label>
+      <input type="radio" class="form__style" name="theme" id="light" checked/>
+      <label for="light" class="form__label-filled">Light</label>
 
       <h2 class="darker-text">Custom Checkbox</h2>
 
@@ -373,12 +364,6 @@
       <label for="cb2" class="form__label-filled">Galaxy A8s</label>
       <input type="checkbox" class="form__style" name="cb" id="cb3" />
       <label for="cb3" class="form__label-filled">Iphone XR</label>
-      <br><br>
-      <input type="radio" class="form__style" name="theme" id="dark" />
-      <label for="dark" class="form__label-filled">Dark</label>
-      <input type="radio" class="form__style" name="theme" id="light" />
-      <label for="light" class="form__label-filled">Light</label>
-      <br><br>
       <input type="checkbox" class="form__style" name="theme" id="dark2" />
       <label for="dark2" class="form__label-filled">Dark Theme</label>
       </div>
@@ -386,22 +371,35 @@
 
 
 
-<Br><Br><Br>
+<Br>
+  <H2 class="dark-text center">Dialogue</H2>
+  <div class="center">
+  <a id="btnClickMe" class="btn light" ripple>Open Dialogue</a>
+  </div>
+
 
   <div id="dialogEditSomeText" title="Dialog" class="dialog">
-<p>
-This is a Dialog.
-</p>
-</div>
+  <p>
+  This is a Dialog.
+  </p>
+  </div>
 
-<a id="btnClickMe" class="btn light" ripple>Open Dialogue</a>
-  <Br><Br><Br>  <Br><Br><Br>
+  <Br><Br>
+
+<H1 class="darker-text center">Mobile Navigation<H1>
+<center>
+<a href="test.html" class="btn blue" ripple>Test Page</a>
+</center>
+
+
+
+  <Br><Br><Br>
 <!--scripts-->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-<script src="js/neo-material.js"></script>
 <script src="js/sidebarjs.min.js"></script>
 <script src="js/bigSlide.js"></script>
+<script src="js/neo-material.js"></script>
 <script src="highlight-code/rainbow-custom.min.js"></script>
 <script>
  // Init SidebarJS
@@ -411,32 +409,6 @@ This is a Dialog.
     $(document).ready(function() {
         $('.side-btn-action').bigSlide();
     });
-</script>
-<script>
-var viewportWidth = window.innerWidth-20;
-var viewportHeight = window.innerHeight-20;
-if (viewportWidth > 1000) viewportWidth = 400;
-if (viewportHeight > 500) viewportHeight = 200;
-$("#dialogEditSomeText").dialog({
-height: viewportHeight,
-width: viewportWidth,
-autoOpen: false,
-modal: false,
-resizable: false,
-draggable: false,
-position: {
-my: "center top",
-at: "center top",
-of: window,
-collision: "none"
-}
-, create: function (event, ui) {
-$(event.target).parent().css('position', 'fixed');
-}
-});
-$( "#btnClickMe" ).click(function() {
-$( "#dialogEditSomeText" ).dialog( "open" );
-});
 </script>
 
 </body>
