@@ -149,13 +149,8 @@ div
 html
 {
 	width: 100%;
-	-webkit-touch-callout: none;
-	 -webkit-user-select: none;
-	 -khtml-user-select: none;
-	 -moz-user-select: none;
-	 -ms-user-select: none;
-	 user-select: none;
-	 -webkit-tap-highlight-color: transparent !important;
+
+
 }
 .center-element
 {
@@ -186,6 +181,7 @@ html
 }
 a {
     text-decoration: none;
+    -webkit-tap-highlight-color: transparent !important;
 }
 .rounded
 {
@@ -273,6 +269,11 @@ i
 	margin-right: 10%;
 	margin-left: 10%;
 }
+.container-cards
+{
+	margin-right: 35%;
+	margin-left: 35%;
+}
 .btn-outline.huge
 {
 	padding: 10px 15px;
@@ -296,10 +297,6 @@ i
 	{
 		margin-right: 4%;
 		margin-left: 1%;
-	}
-	.card-size2
-	{
-		width: 91.5% !important;
 	}
 	.nav-buttons
 	{
@@ -328,40 +325,46 @@ i
 pre {
   overflow: auto;
 }
-.md-fab-btn.mainColor {
+.chip
+{
   display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  background: #00bcd4;
-  color: #fff;
+  color: #424242;
+  text-transform: capitalize;
   border: none;
-  font-size: 27.5px;
-  border-radius: 50%;
-  transition: .3s ease;
+  border-radius: 50px;
+  transition: .2s ease;
+  padding: 6px 10px;
   line-height: 1.452635473;
-  box-shadow: 0 1px 3px 1px rgba(0, 0, 0, 0.15);
+  font-size: 0.9rem;
   cursor: pointer;
   outline: none;
-  height: 75px;
-  width: 75px;
   vertical-align: middle;
-  margin: 5px 7.5px;
+  font-weight: 500;
+  margin-left: 0px;
+  margin-right: 0px;
+  margin-top: 3px;
+  margin-bottom: 3px;
+  background-color: #e0e0e0;
 }
-.md-fab-btn.mainColor:hover, .md-fab-btn.mainColor:focus {
-  box-shadow: 0 7px 15px -5px rgba(0, 0, 0, 0.45);
+.chip:hover
+{
+  background-color: #bdbdbd;
 }
-.md-fab-btn.mainColor .material-icons {
-  font-size: inherit;
-  vertical-align: middle;
+.actions
+{
+  padding: 3px 10px !important;
 }
-.md-fab-btn.amber:hover, .md-fab-btn.amber:focus {
-  box-shadow: 0 7px 15px -5px rgba(0, 0, 0, 0.45);
+.chip > *
+{
+  display: flex;
+  align-items: center;
 }
-.md-fab-btn.amber .material-icons {
-  font-size: inherit;
-  vertical-align: middle;
+.chip > i.material-icons
+{
+  font-size: 23px;
+  margin-top: 2px;
+  margin-right: 5px;
 }
-
 [ripple] {
   position: relative;
   overflow: hidden;
@@ -463,22 +466,11 @@ pre {
 {
 	color: #2979ff !important;
 }
-.card-size
-{
-	width: 200px;
-	height: 200px;
-
-}
-.card-size2
-{
-	width: 400px;
-	height: 200px;
-}
 .card-actions
 {
 	position: absolute;
-	bottom: 5px;
-	right: 5px;
+	bottom: -2px;
+	right: -2px;
 
 }
 .btn-outline:not(.light-blue):hover
@@ -493,12 +485,14 @@ pre {
 {
 	background-color: rgba(155,155,155,0.1);
 }
-.card-actions *
+.card-actions:not(img)
 {
 	  padding: 5px 7px;
 }
 .card
 {
+  position: relative;
+  top: 0px;
 	box-shadow: -1px 4px 6px rgba(0,0,0,.25), 1px 1px 3px rgba(0,0,0,.1) !important;
 	border-radius: 10px;
 	padding: 10px 10px;
@@ -508,6 +502,8 @@ pre {
 	margin-bottom: 5px;
 	position: relative;
 	background-color: #fcfcfc;
+  min-width: 400px;
+  min-height: 95px;
 
 }
 #inline
@@ -516,8 +512,21 @@ pre {
 }
 .card-content
 {
+  margin-top: 25px;
 	position: relative;
 	top: -20px;
+  margin-bottom: 16px;
+}
+.media-content
+{
+  margin-bottom: 40px;
+  width: calc(100% + 20px);
+  margin-left: -10px;
+  margin-top: -10px;
+}
+.media-content > img
+{
+  border-radius: 9.5px 9.5px 0px 0px;
 }
 .z-depth-0
 {
