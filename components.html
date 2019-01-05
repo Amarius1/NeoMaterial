@@ -140,7 +140,7 @@
 <center>
   <a class='btn-flat dark-text' ripple>Flat Button</a>
   <a class='btn-flat blue-text' ripple>Colored Button</a>
-  <a class='btn-flat dark-text ripple' data-ripple-color="#d50000">Custom Ripple Color</a>
+  <a class='btn-flat dark-text' ripple data-ripple-color="#d50000">Custom Ripple Color</a>
 
 </center>
 <br>
@@ -152,12 +152,67 @@
 <a class='btn-flat dark-text' ripple data-ripple-color="#d50000">Custom Ripple Color</a>
 </code>
 </pre>
-<Br><br>
+<Br>
 
-<H1 class="center white-text">Cards</H1>
+<H2 class="center dark-text">Icon Buttons</H2>
+<center>
+  <a class='btn blue' ripple><i class="material-icons">ac_unit</i>Cooling</a>
+  <a class='btn amber' ripple><i class="material-icons">account_balance</i>Balance</a>
+  <a class='btn red' ripple data-ripple-color="#d50000"><i class="material-icons">call_missed</i>Missed Call</a>
+
+</center>
+<H3 class="center dark-text">Large</H3>
+<center>
+  <a class='btn blue large' ripple><i class="material-icons">ac_unit</i>Cooling</a>
+  <a class='btn large amber' ripple><i class="material-icons">account_balance</i>Balance</a>
+  <a class='btn red large' ripple data-ripple-color="#d50000"><i class="material-icons">call_missed</i>Missed Call</a>
+
+</center>
+<H3 class="center dark-text">Outline</H3>
+<center>
+  <a class='btn-outline blue' ripple><i class="material-icons">ac_unit</i>Cooling</a>
+  <a class='btn-outline large amber' ripple><i class="material-icons">account_balance</i>Balance</a>
+  <a class='btn-outline red' ripple data-ripple-color="#d50000"><i class="material-icons">call_missed</i>Missed Call</a>
+
+</center>
+<H3 class="center dark-text">Flat</H3>
+<center>
+  <a class='btn-flat blue' ripple><i class="material-icons">ac_unit</i>Cooling</a>
+  <a class='btn-flat large amber' ripple><i class="material-icons">account_balance</i>Balance</a>
+  <a class='btn-flat red' ripple data-ripple-color="#d50000"><i class="material-icons">call_missed</i>Missed Call</a>
+
+</center>
+<H3 class="center dark-text">Rounded</H3>
+<center>
+  <a class='btn-outline rounded-max blue' ripple><i class="material-icons">ac_unit</i>Cooling</a>
+  <a class='btn-outline rounded-max large amber' ripple><i class="material-icons">account_balance</i>Balance</a>
+  <a class='btn rounded-max red' ripple data-ripple-color="#d50000"><i class="material-icons">call_missed</i>Missed Call</a>
+
+</center>
+  <br>
+<H2 class="darker-text center">Circular Buttons<H2>
+
+<div class="center">
+<a class="cbtn blue" ripple><i class="material-icons">ac_unit</i></a>
+<a class="cbtn-outline blue" ripple><i class="material-icons">access_alarm</i></a>
+<a class="cbtn-flat" ripple><i class="material-icons">access_alarm</i></a>
+</div>
+<H2 class="darker-text center">FAB<H2>
+
+<div class="center">
+<a class="cbtn blue large" ripple><i class="material-icons">add</i></a>
+<a class="cbtn-outline red large" ripple><i class="material-icons">battery_alert</i></a>
+<a class="cbtn-flat large" ripple><i class="material-icons">access_alarm</i></a>
+</div>
+
+
+
+
+
+<H1 class="center darker-text">Cards</H1>
 <H3 class="text-container dark-text center container-small">Cards are very good at containing things like images and text</H3>
 <div class="container-small container-cards">
-  <div class="center-element card light">
+  <div class="center-element card">
     This is a simple card
   </div>
   <div class="card center-element">
@@ -172,6 +227,21 @@
   </div>
   <br>
 
+
+
+  <div class="center-element card">
+    <div class="card-headline">RELATED STORY</div>
+    <div class="card-thumbnail"><img src="https://pbs.twimg.com/profile_images/1035649273721847809/B0f8n_oe_400x400.jpg"></div>
+    <div class="card-content">Trump: Not worried about Apple stock; company should build in U.S.
+      <br><br>
+      Tim Cook smol pp.
+    </div>
+
+  </div>
+
+
+
+  <br>
   <div class="card center-element">
     <div class="media-content">
       <img src="https://cdn.pixabay.com/photo/2015/06/22/11/07/rose-817431_960_720.jpg" width="100%">
@@ -226,13 +296,16 @@
   <div class="nav-buttons">
       <a class='rounded-max btn blue dark-text' ripple>Button</a>
       <a class='rounded-max btn blue dark-text' ripple>Button</a>
-      <div class="dropdown">
-        <a onclick="myFunction()" class='cbtn blue dark-text' ripple><i class="material-icons">arrow_drop_down</i></a>
-         <div id="myDropdown" class="scale-up-ver-top dropdown-content rounded">
-           <a href="#">Option</a>
-           <a href="#">Option</a>
-           <a href="#">Option</a>
-         </div>
+      <div>
+        <a class="dropdown-action cbtn-flat darker-text" ripple><i class="material-icons">more_vert</i></a>
+        <div class="dd-menu">
+          <ul>
+              <li ripple>Profile & status</li>
+              <li ripple>Notification</li>
+              <li ripple>Help</li>
+              <li ripple>Log out</li>
+          </ul>
+        </div>
       </div>
   </div>
 </nav>
@@ -259,36 +332,15 @@
 
 <div sidenav>
   <div class="sidenav-bkg">
-    <div class="center">
-      <H2 class="darker-text center">Side Nav</H2>
-        <a class='rounded-max btn blue dark-text' ripple>Button</a>
-        <a class='rounded-max btn blue dark-text' ripple>Button</a>
-        <a class='rounded-max btn blue dark-text' ripple>Button</a>
-    </div>
-        <br><br>
-        <div class="z-depth-1">
-        <button class="accordion" ripple>Food</button>
-        <div class="panel">
-          <a class='btn-outline rounded-max  dark-text' ripple>Cookies</a>
-          <a class='btn-outline rounded-max  dark-text' ripple>Chicken</a>
-          <a class='btn-outline rounded-max  dark-text' ripple>Eggs</a>
-        </div>
-        <button class="accordion" ripple>Contact</button>
-        <div class="panel">
-          <a class="btn red" ripple>Email</a>
-          <a class="btn light" ripple>Twitter</a>
-          <a class="btn light" ripple>Reddit</a>
-        </div>
-        <button class="accordion" ripple>Manufacturers</button>
-        <div class="panel">
-          <a class="btn orange" ripple>Xiaomi</a>
-          <a class="btn green" ripple>Google</a>
-            <a class="btn purple" ripple>ASUS</a>
-        </div>
-        </div>
-    </div>
+      <H3 class="sidenav-title darker-text">Neo Material<H3>
+      <div class="sidenav-subtitle dark-text">a material framework</div>
+      <ul class="sidenav-list">
+        <li class="dark-text"><i class="material-icons">move_to_inbox</i>Samsung</li>
+        <li class="dark-text"><i class="material-icons">send</i>Google</li>
+        <li class="dark-text"><i class="material-icons">star</i>HTC</li>
+      </ul>
 </div>
-
+</div>
 
 <H2 class="center dark-text">Side Buttons</H2>
 
@@ -448,7 +500,19 @@
   <div>YES THIS ONE TOO</div>
   </a>
 </center>
- <Br><Br><Br> <Br><Br><Br>
+ <Br><Br><Br>
+
+<H1 class="darker-text center">Categories</H1>
+<div class="center-elements container">
+<ul class="list">
+  <li class="darker-text" ripple>Xiaomi - affordable</li>
+  <li class="darker-text">Samsung - beautiful</li>
+  <li class="darker-text">Google - botnet</li>
+  <li class="darker-text">HTC - dead</li>
+</ul>
+<div>
+</H1>
+<Br><Br><Br>
 
 
 <!--scripts-->
