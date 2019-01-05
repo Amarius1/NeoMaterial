@@ -1563,11 +1563,11 @@ background:#404BB3;
   margin-left: 7px;
   font-size: 23px;
 }
-.active
+.sidenav-active
 {
   color: #4285F4 !important;
     background-color: rgba(200,200,200,0.17) !important;
-      border-radius: 7px !important; 
+      border-radius: 7px !important;
 }
 .sidenav-list li:active
 {
