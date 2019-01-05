@@ -1548,6 +1548,7 @@ background:#404BB3;
   position: relative;
   margin-left: -13%;
   display: inline-flex;
+  font-size: 19px;
 }
 .sidenav-list li:hover
 {
@@ -1560,6 +1561,13 @@ background:#404BB3;
 {
   margin-right: 30px;
   margin-left: 7px;
+  font-size: 23px;
+}
+.active
+{
+  color: #4285F4 !important;
+    background-color: rgba(200,200,200,0.17) !important;
+      border-radius: 7px !important; 
 }
 .sidenav-list li:active
 {
