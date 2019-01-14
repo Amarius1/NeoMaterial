@@ -357,7 +357,7 @@ var acc = document.getElementsByClassName("accordion");
 var i;
 
 for (i = 0; i < acc.length; i++) {
-  acc[i].addEventListener("mousedown", function() {
+  acc[i].addEventListener("mouseover", function() {
     this.classList.toggle("active");
     var panel = this.nextElementSibling;
     if (panel.style.maxHeight){
