@@ -28,6 +28,7 @@
 .ripple {
   position: relative;
   cursor: pointer;
+
   overflow: hidden;
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -524,11 +525,9 @@ div
 {
 	font-family: 'Montserrat', sans-serif;
 }
-html
-{
-	width: 100%;
-
-
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
 }
 .center-element
 {
@@ -560,6 +559,10 @@ html
 a {
     text-decoration: none;
     -webkit-tap-highlight-color: transparent !important;
+    -webkit-user-select: none; /* Safari */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* IE10+/Edge */
+    user-select: none; /* Standard */
 }
 .rounded
 {
@@ -1096,9 +1099,23 @@ material-icons
 {
   margin-right: -1px;
 }
-button.accordion i
+a.accordion-action i
 {
-	float: right;
+	position: absolute;
+  right: 10px;
+  top: 15px;
+  font-size: 26px;
+    transition: all 0.3s;
+}
+a.accordion-action.active i
+{
+  position: absolute;
+  right: 10px;
+  top: 17px;
+  font-size: 28px;
+  color: #4285F4;
+  transform: rotate(-180deg);
+  transition: all 0.3s;
 }
 .fix-align1
 {
@@ -1147,59 +1164,54 @@ button {
 	margin-top: 9px;
 }
 .accordion {
-    background-color: rgba(1,1,1,0);
-    color: #616161;
-    cursor: pointer;
-    padding: 18px;
-    width: 100%;
-    text-align: left;
-		border-top: 1px solid #ddd;
-    border-right: 0px solid #ddd;
-    border-left: 0px solid #ddd;
-		border-bottom: 0px solid #ddd;
-    outline: none;
-    transition: 0.4s;
-		font-size: 18px;
-}
-
-/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
-
-/* Style the accordion panel. Note: hidden by default */
-.panel {
-    padding: 0 6px;
-    background-color: #ffffff;
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.2s ease-out;
+  max-width: 100%;
+  border-radius: 9px;
+  -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24) !important;
+  -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24) !important;
+  -ms-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24) !important;
+  -o-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24) !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24) !important;
+  -webkit-transition: all 0.1s ease-in-out;
+  -moz-transition: all 0.1s ease-in-out;
+  -ms-transition: all 0.1s ease-in-out;
+  -o-transition: all 0.1s ease-in-out;
+  transition: all 0.1s ease-in-out;
+  list-style: none;
+  background-color: rgba(1,1,1,0.004);
 
 }
-.panel > :not(marquee){
-    margin-top: 5px;
-		margin-bottom: 5px;
+.accordion li {
+  position: relative;
+  border-bottom: 1px solid rgba(140,140,140,0.3);
+  margin-left: -40px;
+
 }
-.wrapper-accordion>button.accordion:first-child
-{
-	border-radius: 9.5px 9.5px 0px 0px;
+li:last-child {
+  border-bottom: none;
 }
-.wrapper-accordion .panel:nth-last-child(1)
-{
-	border-radius: 0px 0px 9.5px 9.5px;
+
+.accordion li div.accordion-content {
+  display: none;
+  margin-top: -15px;
+  padding: 0px 10px 10px;
 }
-.wrapper-accordion
-{
-	 border-radius: 9.5px;
-	   -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-	   -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-	   -ms-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-	   -o-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-	   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-	   -webkit-transition: all 0.125s ease-in-out;
-	   -moz-transition: all 0.15s ease-in-out;
-	   -ms-transition: all 0.125s ease-in-out;
-	   -o-transition: all 0.15s ease-in-out;
-	   transition: all 0.15s ease-in-out;
-	 }
+.accordion a.accordion-action {
+  width: 100%;
+  display: block;
+  cursor: pointer;
+  font-weight: 600;
+  line-height: 3;
+  user-select: none;
+  color: #616161;
+  font-size: 18px;
+  padding-left: 10px;
 }
+
+.accordion div.accordion-content {
+  padding: 10px;
+}
+
+
 
 .load-bar {
   position: relative;
@@ -1531,67 +1543,7 @@ label.form__label-filled::before {
 	top: 7px;
 	z-index: 999;
 }
-section {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  border-radius: 9.5px 9.5px 0 0;
-  -webkit-transition: -webkit-transform 0.3s;
-}
-section.one {
-  background: #f75b5b;
-}
-section.two {
-  background: #c84051;
-}
-section.three {
-  background: #4f3462;
-}
-section.four {
-  background: #794d9a;
-}
-section.after {
-  -webkit-transform: translateY(100%);
-}
-section>h1 {
-  color: white;
-  font-weight: 500;
-  font-size: 29px;
-  text-align: center;
-  margin-top: 10px;
-  -webkit-user-select: none;
-}
-.wrapper>h1 {
-	color: white;
-  font-weight: 500;
-  font-size: 29px;
-  text-align: center;
-  margin-top: 10px;
-  -webkit-user-select: none;
-}
-.menu-open section {
-  cursor: pointer;
-}
-.menu-open section.one {
-  -webkit-transform: translateY(70px);
-}
-.menu-open section.two {
-  -webkit-transform: translateY(140px);
-}
-.menu-open section.three {
-  -webkit-transform: translateY(210px);
-}
-.menu-open section.four {
-  -webkit-transform: translateY(280px);
-}
-section
-{
-	-webkit-box-shadow: 0px -3px 2px rgba(0, 0, 0, 0.12);
-	  -moz-box-shadow: 0px -3px 2px rgba(0, 0, 0, 0.12);
-	  box-shadow: 0px -3px 2px rgba(0, 0, 0, 0.12);
-}
+
 .mirror
 {
 -webkit-box-reflect: below 0px -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(80%, transparent) , to(rgba(250, 250, 250, 0.2)));
