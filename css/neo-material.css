@@ -28,7 +28,6 @@
 .ripple {
   position: relative;
   cursor: pointer;
-  display: inline-block;
   overflow: hidden;
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -55,6 +54,14 @@
     background-color: rgba(67, 135, 244, 0.25) !important;
 }
 .btn-flat.blue .waves-ripple
+{
+    background-color: rgba(67, 135, 244, 0.25) !important;
+}
+.cbtn-outline.blue .waves-ripple
+{
+    background-color: rgba(67, 135, 244, 0.25) !important;
+}
+.cbtn-flat.blue .waves-ripple
 {
     background-color: rgba(67, 135, 244, 0.25) !important;
 }
@@ -235,18 +242,46 @@ a.waves-effect .waves-ripple {
 {
     background-color: rgba(255,10,0,0.25) !important;
 }
+.cbtn-outline.red .waves-ripple
+{
+    background-color: rgba(255,10,0,0.25) !important;
+}
+.cbtn-flat.red .waves-ripple
+{
+    background-color: rgba(255,10,0,0.25) !important;
+}
 .red .waves-ripple
 {
     background-color: rgba(255,255,255,0.25) !important;
 }
 /*END*/
-
-
 .purple
 {
 	background-color: #9c27b0 !important;
 	box-shadow: 0 1px 3px 1px rgba(255, 0, 255, 0.25) !important;
 }
+/*----------------RIPPLE PART-------------*/
+.btn-outline.purple .waves-ripple
+{
+    background-color: rgba(255, 0, 255,0.25) !important;
+}
+.btn-flat.purple .waves-ripple
+{
+    background-color: rgba(255, 0, 255,0.25) !important;
+}
+.cbtn-outline.purple .waves-ripple
+{
+    background-color: rgba(255, 0, 255,0.25) !important;
+}
+.cbtn-flat.purple .waves-ripple
+{
+    background-color: rgba(255, 0, 255,0.25) !important;
+}
+.purple .waves-ripple
+{
+    background-color: rgba(255,255,255,0.25) !important;
+}
+/*END*/
 .btn-flat.purple
 {
   color: #9c27b0 !important;
@@ -272,6 +307,29 @@ a.waves-effect .waves-ripple {
 	background-color: #3f51b5 !important;
 	box-shadow: 0 1px 3px 1px rgba(63, 81, 181, 0.27) !important;
 }
+/*----------------RIPPLE PART-------------*/
+
+.btn-outline.indigo .waves-ripple
+{
+    background-color: rgba(63, 81, 181,0.25) !important;
+}
+.btn-flat.indigo .waves-ripple
+{
+    background-color: rgba(63, 81, 181,0.25) !important;
+}
+.cbtn-outline.indigo .waves-ripple
+{
+    background-color: rgba(63, 81, 181,0.25) !important;
+}
+.cbtn-flat.indigo .waves-ripple
+{
+    background-color: rgba(63, 81, 181,0.25) !important;
+}
+.indigo .waves-ripple
+{
+    background-color: rgba(255,255,255,0.25) !important;
+}
+/*END*/
 .btn-flat.purple
 {
   color: #3f51b5 !important;
@@ -312,6 +370,29 @@ a.blue
 	background-color: #4caf50 !important;
 	box-shadow: 0 1px 3px 1px rgba(0, 255, 0, 0.27) !important;
 }
+/*----------------RIPPLE PART-------------*/
+
+.btn-outline.green .waves-ripple
+{
+    background-color: rgba(0, 255, 0,0.25) !important;
+}
+.btn-flat.green .waves-ripple
+{
+    background-color: rgba(0, 255, 0,0.25) !important;
+}
+.green .waves-ripple
+{
+    background-color: rgba(255,255,255,0.25) !important;
+}
+.cbtn-outline.green .waves-ripple
+{
+    background-color: rgba(0, 255, 0,0.25) !important;
+}
+.cbtn-flat.green .waves-ripple
+{
+    background-color: rgba(0, 255, 0,0.25) !important;
+}
+/*END*/
 .btn-flat.green
 {
   color: #4caf50 !important;
@@ -337,6 +418,7 @@ a.blue
 	background-color: #ffeb3b !important;
 	box-shadow: 0 1px 3px 1px rgba(150, 150, 150, 0.3) !important;
 }
+
 .btn-flat.yellow
 {
   color: #ffeb3b !important;
@@ -362,6 +444,33 @@ a.blue
 	background-color: #ffc107 !important;
 	box-shadow: 0 1px 3px 1px rgba(255, 193, 7, 0.3) !important;
 }
+/*----------------RIPPLE PART-------------*/
+
+.btn-outline.amber .waves-ripple
+{
+    background-color: rgba(255, 193, 7,0.25) !important;
+}
+.btn-flat.amber .waves-ripple
+{
+    background-color: rgba(255, 193, 7,0.25) !important;
+}
+.amber .waves-ripple
+{
+    background-color: rgba(255, 255, 255,0.25) !important;
+}
+.cbtn-outline.amber .waves-ripple
+{
+    background-color: rgba(255, 193, 7,0.25) !important;
+}
+.cbtn-flat.amber .waves-ripple
+{
+    background-color: rgba(255, 193, 7,0.25) !important;
+}
+.amber .waves-ripple
+{
+    background-color: rgba(255, 255, 255,0.25) !important;
+}
+/*END*/
 .btn-flat.amber
 {
   color: #ffc107 !important;
@@ -759,6 +868,8 @@ pre {
   right: 3px;
   bottom: -9px;
   margin-left: 3px;
+  padding: 4px 6px;
+  border-radius: 7px;
 }
 .btn-outline:not(.light-blue):hover
 {
