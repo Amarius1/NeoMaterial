@@ -1,224 +1,334 @@
-//RIPPLE BY YOUNG PARK - FOR MOBILE BUTTONS
-(function($){
-  "use strict";
+;(function(window) {
+    'use strict';
 
-  $.fn.extend({
-    mdRipple: function(options){
-      options = $.extend({
-        // Default options
+    var Waves = Waves || {};
+    var $$ = document.querySelectorAll.bind(document);
 
-      }, options);
-      var namespace = 'mdRipple',
-      coreClasses = {
-        button: 'md-ripple-active',
-        iconButton: 'md-icon-button',
-        container: 'md-ripple-container',
-        ripple: 'md-ripple',
-        focus: 'md-focus'
-      },
-      coreAttributes = {
-        color: 'ripple-color',
-        noRipple: 'no-ripple'
-      },
-      rippleTemplate = '<svg preserveAspectRatio="none" viewBox="25 25 50 50"><circle cx="50" cy="50" r="25"/></svg>',
-      mouseDown = false;
-
-      // General element actions
-      _initialize(this);
-
-      // Individual element actions
-      this.each(function(){
-        var elem = $(this);
-        elem.on(_namespaceEvents('mousedown'), _mouseDown);
-        elem.on(_namespaceEvents('focus'), _drawFocus);
-        elem.on(_namespaceEvents('blur'), _clearContainer);
-      });
-
-      return this;
-
-      /////////////////////////////////
-
-      function _initialize(elems){
-        // Unbind anything within plugin namespace to prevent duplicate event bindings
-        elems.off('.' + namespace);
-        _addRippleContainerTo(elems);
-      }
-
-      function _addRippleContainerTo(elem) {
-        var rippleContainer = elem.find('.' + coreClasses.container).get(0);
-        if (!rippleContainer) {
-          rippleContainer = document.createElement('div');
-          rippleContainer.className = coreClasses.container;
-          elem.addClass(coreClasses.button).append($(rippleContainer));
-        }
-      }
-
-      function _getMouseClickCoords(elem, e) {
-        var container = elem,
-        coords = {};
-
-        if (!e || elem.hasClass(coreClasses.iconButton)){
-          coords.x = container.outerWidth() / 2;
-          coords.y = container.outerHeight() / 2;
-        } else {
-          coords.x = e.pageX - container.offset().left;
-          coords.y = e.pageY - container.offset().top;
-        }
-
-        return coords;
-      }
-
-      function _mouseDown(e) {
-        var elem = $(this);
-        if (!mouseDown && !elem.is(":disabled") && !elem.data(coreAttributes.noRipple)) {
-          mouseDown = true;
-          var coords = _getMouseClickCoords(elem, e);
-          _removeFocus(elem);
-          _drawRipple(elem, coords);
-        }
-        e.preventDefault();
-      }
-
-      function _drawRipple(elem, coords) {
-        var container = elem.find('.' + coreClasses.container).first(),
-        color = elem.data(coreAttributes.color),
-        ripple = $(rippleTemplate),
-        containerDims = {
-          width: container.outerWidth(),
-          height: container.outerHeight()
-        },
-        initialDiameter = (containerDims.width > containerDims.height ? containerDims.width : containerDims.height) * .5,
-        greatestWidth, greatestHeight, diameter = 1, scale = 1,
-        vm = this;
-
-        ripple.addClass(coreClasses.ripple).css({
-          'fill': !!color ? color : '',
-          'transform': 'translate(' + coords.x + 'px, ' + coords.y + 'px) translate(-50%, -50%)',
-          'opacity': .5,
-          'width': initialDiameter,
-          'height': initialDiameter
-        });
-        container.append(ripple);
-
-        if(coords.x >= containerDims.width / 2){
-          greatestWidth = coords.x;
-        }
-        else{
-          greatestWidth = containerDims.width - coords.x;
-        }
-        if(coords.y >= containerDims.height / 2){
-          greatestHeight = coords.y;
-        }
-        else{
-          greatestHeight = containerDims.height - coords.y;
-        }
-
-        diameter = Math.sqrt(Math.pow(greatestWidth, 2) + Math.pow(greatestHeight, 2)) * 2.05;
-        scale = (diameter / initialDiameter);
-
-        // Forces the browser to calculate an actual value
-        ripple.css('opacity');
-        ripple.css('transform');
-        ripple.css({
-          'opacity': 1,
-          'transform': 'translate(' + coords.x + 'px,' + coords.y + 'px) translate(-50%,-50%) scale(' + scale + ')'
-        });
-
-        elem.bind(_namespaceEvents('mouseup mouseleave'), function(e){
-          mouseDown = false;
-          _hideRipple(ripple);
-          $(this).unbind(_namespaceEvents('mouseup mouseleave'));
-        });
-      }
-
-      function _drawFocus(){
-        var elem = $(this);
-
-        if(!elem.is(":active")) {
-          var container = elem.find('.' + coreClasses.container).first(),
-          color = elem.data(coreAttributes.color),
-          ripple = $(rippleTemplate),
-          coords = _getMouseClickCoords(elem);
-
-          // Destroy all previous instances of focus ripple
-          container.find('.' + coreClasses.focus).remove();
-
-          ripple.addClass(coreClasses.focus).css({
-            'fill': !!color ? color : '',
-            'transform': 'translate(' + coords.x + 'px, ' + coords.y + 'px) translate(-50%,-50%)',
-            'width': coords.x * 2 * .9,
-            'height': coords.x * 2 * .9
-          });
-
-          container.append(ripple);
-        }
-      }
-
-      function _hideRipple(elem) {
-        elem.css('opacity', 0);
-        elem.one(_namespaceEvents('transitionend webkitTransitionEnd oTransitionEnd MSTransitionEnd'), function() {
-          $(this).remove();
-        });
-      }
-
-      function _removeFocus(elem) {
-        elem.find('.' + coreClasses.container + ' .' + coreClasses.focus).remove();
-      }
-
-      function _clearContainer() {
-        $(this).find('.' + coreClasses.container).find('.' + coreClasses.focus + ', .' + coreClasses.ripple).remove();
-      }
-
-      function _namespaceEvents(eventString) {
-        return eventString.trim().split(/\s+/).map(function(a){ return a + '.' + namespace; }).reduce(function(a, b){ return a + ' ' + b });
-      }
+    // Find exact position of element
+    function isWindow(obj) {
+        return obj !== null && obj === obj.window;
     }
-  });
-})(jQuery);
 
-(function(){
-  $(document).ready(function(){
-    $('a.ripple, a.md-button, .ripple-image').mdRipple();
+    function getWindow(elem) {
+        return isWindow(elem) ? elem : elem.nodeType === 9 && elem.defaultView;
+    }
 
-    $('.party-button').on('click focus', function(){
-      $(this).data('ripple-color', '#' + ("000000" + Math.random().toString(16).slice(2, 8).toUpperCase()).slice(-6));
-    });
-    $('.focus-me').focus();
-  });
-})();
-/*DESKTOP RIPPLE*/
-(function() {
-    const showEvent = (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) ? 'touchstart' : 'mousedown';
-    const hideEvent = (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) ? 'touchend' : 'mouseup';
-    $(document).on(showEvent, '[ripple]', function(e){
-        if (e.button == 2){
-            return false
+    function offset(elem) {
+        var docElem, win,
+            box = {top: 0, left: 0},
+            doc = elem && elem.ownerDocument;
+
+        docElem = doc.documentElement;
+
+        if (typeof elem.getBoundingClientRect !== typeof undefined) {
+            box = elem.getBoundingClientRect();
         }
-    	$ripple = $('<span class="ripple-effect" />'),
-    	$button = $(this),
-    	$offset = $button.offset(),
-    	xPos = (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) && 'touches' in e ? ( e.touches[0].pageX - $offset.left ) : (e.pageX - $offset.left),
-    	yPos = (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) && 'touches' in e ? ( e.touches[0].pageY - $offset.top ) : (e.pageY - $offset.top),
-    	$color = $button.data('ripple-color') || $button.css('color'),
-    	scaledSize = Math.max( $button.width() , $button.height()) * Math.PI * 1.5;
-    	$ripple.css({
-    		'top': yPos,
-    		'left': xPos,
-    		'background-color': $color,
-            opacity: .2
-    	}).appendTo( $button ).animate({
-    		'height': scaledSize,
-    		'width': scaledSize,
-    	}, 500/3*2)
-        $(document).on(hideEvent, $button, function (e) {
-            $ripple.animate({
-                'opacity': 0
-            }, 700/3, function () {
-                $(this).remove()
-            })
-        })
-    })
-}());
+        win = getWindow(doc);
+        return {
+            top: box.top + win.pageYOffset - docElem.clientTop,
+            left: box.left + win.pageXOffset - docElem.clientLeft
+        };
+    }
+
+    function convertStyle(obj) {
+        var style = '';
+
+        for (var a in obj) {
+            if (obj.hasOwnProperty(a)) {
+                style += (a + ':' + obj[a] + ';');
+            }
+        }
+
+        return style;
+    }
+
+    var Effect = {
+
+        // Effect delay
+        duration:390,
+
+        show: function(e, element) {
+
+            // Disable right click
+            if (e.button === 2) {
+                return false;
+            }
+
+            var el = element || this;
+
+            // Create ripple
+            var ripple = document.createElement('div');
+            ripple.className = 'waves-ripple';
+            el.appendChild(ripple);
+
+            // Get click coordinate and element witdh
+            var pos         = offset(el);
+            var relativeY   = (e.pageY - pos.top);
+            var relativeX   = (e.pageX - pos.left);
+            var scale       = 'scale('+((el.clientWidth / 100) * 10)+')';
+
+            // Support for touch devices
+            if ('touches' in e) {
+              relativeY   = (e.touches[0].pageY - pos.top);
+              relativeX   = (e.touches[0].pageX - pos.left);
+            }
+
+            // Attach data to element
+            ripple.setAttribute('data-hold', Date.now());
+            ripple.setAttribute('data-scale', scale);
+            ripple.setAttribute('data-x', relativeX);
+            ripple.setAttribute('data-y', relativeY);
+
+            // Set ripple position
+            var rippleStyle = {
+                'top': relativeY+'px',
+                'left': relativeX+'px',
+            };
+
+            ripple.className = ripple.className + ' waves-notransition';
+            ripple.setAttribute('style', convertStyle(rippleStyle));
+            ripple.className = ripple.className.replace('waves-notransition', '');
+
+            // Scale the ripple
+            rippleStyle['-webkit-transform'] = scale;
+            rippleStyle['-moz-transform'] = scale;
+            rippleStyle['-ms-transform'] = scale;
+            rippleStyle['-o-transform'] = scale;
+            rippleStyle.transform = scale;
+            rippleStyle.opacity   = '0.85';
+      
+
+
+
+            rippleStyle['-webkit-transition-duration'] = Effect.duration + 'ms';
+            rippleStyle['-moz-transition-duration']    = Effect.duration + 'ms';
+            rippleStyle['-o-transition-duration']      = Effect.duration + 'ms';
+            rippleStyle['transition-duration']         = Effect.duration + 'ms';
+
+
+
+            ripple.setAttribute('style', convertStyle(rippleStyle));
+        },
+
+        hide: function(e) {
+            TouchHandler.touchup(e);
+
+            var el = this;
+            var width = el.clientWidth * 1.4;
+
+            // Get first ripple
+            var ripple = null;
+            var ripples = el.getElementsByClassName('waves-ripple');
+            if (ripples.length > 0) {
+                ripple = ripples[ripples.length - 1];
+            } else {
+                return false;
+            }
+
+            var relativeX   = ripple.getAttribute('data-x');
+            var relativeY   = ripple.getAttribute('data-y');
+            var scale       = ripple.getAttribute('data-scale');
+
+            // Get delay beetween mousedown and mouse leave
+            var diff = Date.now() - Number(ripple.getAttribute('data-hold'));
+            var delay = 350 - diff;
+
+            if (delay < 0) {
+                delay = 0;
+            }
+
+            // Fade out ripple after delay
+            setTimeout(function() {
+                var style = {
+                    'top': relativeY+'px',
+                    'left': relativeX+'px',
+                    'opacity': '0',
+
+                    // Duration
+                    '-webkit-transition-duration': Effect.duration + 'ms',
+                    '-moz-transition-duration': Effect.duration + 'ms',
+                    '-o-transition-duration': Effect.duration + 'ms',
+                    'transition-duration': Effect.duration + 'ms',
+                    '-webkit-transform': scale,
+                    '-moz-transform': scale,
+                    '-ms-transform': scale,
+                    '-o-transform': scale,
+                    'transform': scale,
+                };
+
+                ripple.setAttribute('style', convertStyle(style));
+
+                setTimeout(function() {
+                    try {
+                        el.removeChild(ripple);
+                    } catch(e) {
+                        return false;
+                    }
+                }, Effect.duration);
+            }, delay);
+        },
+
+        // Little hack to make <input> can perform waves effect
+        wrapInput: function(elements) {
+            for (var a = 0; a < elements.length; a++) {
+                var el = elements[a];
+
+                if (el.tagName.toLowerCase() === 'input') {
+                    var parent = el.parentNode;
+
+                    // If input already have parent just pass through
+                    if (parent.tagName.toLowerCase() === 'i' && parent.className.indexOf('ripple') !== -1) {
+                        continue;
+                    }
+
+                    // Put element class and style to the specified parent
+                    var wrapper = document.createElement('i');
+                    wrapper.className = el.className + ' waves-input-wrapper';
+
+                    var elementStyle = el.getAttribute('style');
+
+                    if (!elementStyle) {
+                        elementStyle = '';
+                    }
+
+                    wrapper.setAttribute('style', elementStyle);
+
+                    el.className = 'waves-button-input';
+                    el.removeAttribute('style');
+
+                    // Put element as child
+                    parent.replaceChild(wrapper, el);
+                    wrapper.appendChild(el);
+                }
+            }
+        }
+    };
+
+
+    /**
+     * Disable mousedown event for 500ms during and after touch
+     */
+    var TouchHandler = {
+        /* uses an integer rather than bool so there's no issues with
+         * needing to clear timeouts if another touch event occurred
+         * within the 500ms. Cannot mouseup between touchstart and
+         * touchend, nor in the 500ms after touchend. */
+        touches: 0,
+        allowEvent: function(e) {
+            var allow = true;
+
+            if (e.type === 'touchstart') {
+                TouchHandler.touches += 1; //push
+            } else if (e.type === 'touchend' || e.type === 'touchcancel') {
+                setTimeout(function() {
+                    if (TouchHandler.touches > 0) {
+                        TouchHandler.touches -= 1; //pop after 500ms
+                    }
+                }, 500);
+            } else if (e.type === 'mousedown' && TouchHandler.touches > 0) {
+                allow = false;
+            }
+
+            return allow;
+        },
+        touchup: function(e) {
+            TouchHandler.allowEvent(e);
+        }
+    };
+
+
+    /**
+     * Delegated click handler for .ripple element.
+     * returns null when .ripple element not in "click tree"
+     */
+    function getWavesEffectElement(e) {
+        if (TouchHandler.allowEvent(e) === false) {
+            return null;
+        }
+
+        var element = null;
+        var target = e.target || e.srcElement;
+
+        while (target.parentElement !== null) {
+            if (!(target instanceof SVGElement) && target.className.indexOf('ripple') !== -1) {
+                element = target;
+                break;
+            } else if (target.classList.contains('ripple')) {
+                element = target;
+                break;
+            }
+            target = target.parentElement;
+        }
+
+        return element;
+    }
+
+    /**
+     * Bubble the click and show effect if .ripple elem was found
+     */
+    function showEffect(e) {
+        var element = getWavesEffectElement(e);
+
+        if (element !== null) {
+            Effect.show(e, element);
+
+            if ('ontouchstart' in window) {
+                element.addEventListener('touchend', Effect.hide, false);
+                element.addEventListener('touchcancel', Effect.hide, false);
+            }
+
+            element.addEventListener('mouseup', Effect.hide, false);
+            element.addEventListener('mouseleave', Effect.hide, false);
+        }
+    }
+
+    Waves.displayEffect = function(options) {
+        options = options || {};
+
+        if ('duration' in options) {
+            Effect.duration = options.duration;
+        }
+
+        //Wrap input inside <i> tag
+        Effect.wrapInput($$('.ripple'));
+
+        if ('ontouchstart' in window) {
+            document.body.addEventListener('touchstart', showEffect, false);
+        }
+
+        document.body.addEventListener('mousedown', showEffect, false);
+    };
+
+    /**
+     * Attach Waves to an input element (or any element which doesn't
+     * bubble mouseup/mousedown events).
+     *   Intended to be used with dynamically loaded forms/inputs, or
+     * where the user doesn't want a delegated click handler.
+     */
+    Waves.attach = function(element) {
+        //FUTURE: automatically add waves classes and allow users
+        // to specify them with an options param? Eg. light/classic/button
+        if (element.tagName.toLowerCase() === 'input') {
+            Effect.wrapInput([element]);
+            element = element.parentElement;
+        }
+
+        if ('ontouchstart' in window) {
+            element.addEventListener('touchstart', showEffect, false);
+        }
+
+        element.addEventListener('mousedown', showEffect, false);
+    };
+
+    window.Waves = Waves;
+
+    document.addEventListener('DOMContentLoaded', function() {
+        Waves.displayEffect();
+    }, false);
+
+})(window);
+
+
 //DROPDOWN
 function myFunction() {
     document.getElementById("myDropdown").classList.toggle("show");
