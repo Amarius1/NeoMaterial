@@ -44,7 +44,10 @@
   -ms-transition: all 0.3s ease-out;
   transition: all 10s ease-out;
 }
-
+.tab .waves-ripple
+{
+  background-color: rgba(1, 1, 1, 0.09) !important;
+}
 .blue-text .waves-ripple
 {
   background-color: rgba(67, 135, 244, 0.25) !important;
@@ -234,7 +237,10 @@ a.waves-effect .waves-ripple {
 {
   background-color: rgba(255,10,0,0.25) !important;
 }
-
+.red-text
+{
+  color: red;
+}
 .btn-outline.red .waves-ripple
 {
     background-color: rgba(255,10,0,0.25) !important;
@@ -1669,7 +1675,7 @@ background:#404BB3;
   margin-right: 4px;
   margin-left: -7px;
 }
-.large
+a.large
 {
     padding: 10px 14px;
     border-radius:9.5px;
@@ -1782,4 +1788,158 @@ background:#404BB3;
 {
   background-color: rgba(200,200,200,0.17);
   transition: all 0.2s;
+}
+
+
+
+
+
+header {
+		position: relative;
+}
+
+.hide {
+		display: none;
+}
+
+.tab-content {
+		padding: 7px;
+}
+
+#tab-selector {
+		position: relative;
+		display: block;
+	  padding:0;
+		border-bottom: 1px solid #e0e0e0;
+    z-index: 999;
+}
+
+#tab-selector>a {
+		position: relative;
+	 display:inline-block;
+		text-decoration: none;
+		padding-bottom: 10px;
+    padding-top: 8px;
+    padding-left: 9px;
+    padding-right: 9px;
+		font-size: 16px;
+		font-weight: 600;
+		color: #424f5a;
+		text-align: center;
+		outline:;
+    transition: all 0.1s ease-out;
+    border-radius: 30px/110px;
+}
+
+#tab-selector>a.active {
+		font-weight: 600;
+		outline:none;
+    color: black;
+}
+#tab-selector>a.active::after {
+  content: "";
+  width: 70%;
+  height: 5px;
+  background-color: #4285F4;
+  position: absolute;
+  bottom: -5px !important;
+  left: 15%;
+    border-radius: 5px 5px 0px 0px;
+    -webkit-animation: slide-top 0.2s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+  	        animation: slide-top 0.2s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+  }
+  #tab-selector>a:not(.active)::before{
+    content: "";
+    width: 70%;
+    height: 5px;
+    background-color: #4285F4;
+    position: absolute;
+    bottom: -1px;
+    left: 15%;
+      border-radius: 5px 5px 0px 0px;
+      -webkit-animation: slide-bottom 0.1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    	        animation: slide-bottom 0.1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    }
+    #tab-selector>a:not(.active){
+      opacity: 0.8;
+      }
+::selection {
+    background-color: rgba(1,1,1,0.1);
+}
+
+@media only screen and (max-width: 520px) {
+		.nav-tabs#material-tabs>li>a {
+				font-size: 11px;
+		}
+}
+.tab-content > *
+{
+  -webkit-animation: slide-bottom2 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+	        animation: slide-bottom2 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+
+@-webkit-keyframes slide-top {
+  0% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+  100% {
+    -webkit-transform: translateY(-4px);
+            transform: translateY(-4px);
+  }
+}
+@keyframes slide-top {
+  0% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+  100% {
+    -webkit-transform: translateY(-4px);
+            transform: translateY(-4px);
+  }
+}
+@-webkit-keyframes slide-bottom {
+  0% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+  100% {
+    -webkit-transform: translateY(4px);
+            transform: translateY(4px);
+  }
+}
+@keyframes slide-bottom {
+  0% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+  100% {
+    -webkit-transform: translateY(4px);
+            transform: translateY(4px);
+  }
+}
+@-webkit-keyframes slide-bottom2 {
+  0% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+            opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateY(4px);
+            transform: translateY(4px);
+            opacity: 1;
+  }
+}
+@keyframes slide-bottom2 {
+  0% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+              opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateY(4px);
+            transform: translateY(4px);
+            opacity: 1;
+  }
 }
