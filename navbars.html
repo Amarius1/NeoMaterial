@@ -7,6 +7,7 @@
   <link href="highlight-code/rainbow.css" type="text/css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="css/sidebarjs.min.css">
 	<script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
 </head>
 <style>
@@ -94,8 +95,43 @@
 </nav>
 <br><br>
 
+
+<nav>
+  <div class="nav-title">
+    <i class="material-icons cbtn-flat darker-text ripple" sidenav-toggle>menu</i>
+    <H3 class="darker-text">Sidenav</H3>
+  </div>
+  <div class="nav-buttons">
+    <a class='rounded-max btn blue dark-text ripple'>Button</a>
+  </div>
+</nav>
+
+<Br><br>
+
+<div sidenav>
+  <div class="sidenav-bkg">
+      <H3 class="sidenav-title darker-text">Neo Material<H3>
+      <div class="sidenav-subtitle dark-text">a material framework</div>
+      <ul class="sidenav-list">
+        <li class="dark-text sidenav-active"><i class="material-icons">move_to_inbox</i>Samsung</li>
+        <li class="dark-text"><i class="material-icons">send</i>Google</li>
+        <li class="dark-text"><i class="material-icons">star</i>HTC</li>
+      </ul>
+      <a class="btn blue ripple">Button</a>
+    </div>
+</div>
+
+
+
+
 <!--scripts-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="js/neo-material.js"></script>
+<script src="js/sidebarjs.min.js"></script>
+<script>
+ // Init SidebarJS
+ var sidenav = new sidenav.SidebarElement();
+ </script>
 <script src="highlight-code/rainbow-custom.min.js"></script>
 </body>
 
