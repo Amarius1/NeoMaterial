@@ -471,35 +471,18 @@ $(".dropdown-action").click (function(e){
 });
 
 
+// Pure CSS
+$('.tabgroup > div').hide();
+$('.tabgroup > div:first-of-type').show();
+$('.tabs a').click(function(e){
+  e.preventDefault();
+    var $this = $(this),
+        tabgroup = '#'+$this.parents('.tabs').data('tabgroup'),
+        others = $this.closest('li').siblings().children('a'),
+        target = $this.attr('href');
+    others.removeClass('active');
+    $this.addClass('active');
+    $(tabgroup).children('div').hide();
+    $(target).show();
 
-
-
-$(document).ready(function() {
-		$('#tab-selector').each(function() {
-
-				var $active, $content, $links = $(this).find('a');
-
-				$active = $($links[0]);
-				$active.addClass('active');
-
-				$content = $($active[0].hash);
-
-				$links.not($active).each(function() {
-						$(this.hash).hide();
-				});
-
-				$(this).on('click', 'a', function(e) {
-
-						$active.removeClass('active');
-						$content.hide();
-
-						$active = $(this);
-						$content = $(this.hash);
-
-						$active.addClass('active');
-						$content.show();
-
-						e.preventDefault();
-				});
-		});
-});
+})
