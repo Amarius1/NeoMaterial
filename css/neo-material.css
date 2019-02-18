@@ -750,9 +750,16 @@ i
   }
   .categories li a
   {
-    display: inline-block;
+    display: inline-flex;
       display: -moz-inline-box;
-      width: 96px;
+      width: 100px;
+      padding-left: 10px !important;
+      padding-right: 10px !important;
+  }
+  ul.categories
+  {
+    width: 100% !important;
+    color: red !important;
   }
 }
 pre {
