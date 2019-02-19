@@ -816,7 +816,7 @@ pre {
     border: none;
     border-radius: 9px;
     transition: .3s ease;
-    padding: 5px 15px;
+    padding: 5px 16px;
     line-height: 1.452635473;
     font-size: 1rem;
     box-shadow: 0 1px 3px 1px rgba(0, 0, 0, 0.15);
@@ -838,7 +838,7 @@ pre {
     border-style: solid;
     border-radius: 9.5px;
     transition: .3s ease;
-    padding: 5px 15px;
+    padding: 5px 16px;
     line-height: 1.452635473;
     font-size: 1rem;
     cursor: pointer;
@@ -857,7 +857,7 @@ pre {
   border: none;
   border-radius: 9px;
   transition: .3s ease;
-  padding: 5px 15px;
+  padding: 5px 16px;
   line-height: 1.452635473;
   font-size: 1rem;
   cursor: pointer;
@@ -964,6 +964,27 @@ pre {
 	background-color: #fcfcfc;
   min-width: 320px;
   min-height: 85px;
+
+}
+.non-rounded 
+{
+	border-radius: 2px;
+}
+.card-outline
+{
+  position: relative;
+  top: 0px;
+	border-radius: 9px;
+	padding: 7px 7px;
+	margin-right: 5px;
+	margin-left: 5px;
+	margin-top: 2px;
+	margin-bottom: 5px;
+	position: relative;
+	background-color: white;
+  min-width: 320px;
+  min-height: 85px;
+  border: 2px solid #bdbdbd ;
 
 }
 #inline
@@ -2148,4 +2169,9 @@ font-size: 15px;
     margin-top: 0px;
     margin-bottom: -5px;
     border-radius: 5px;
+}
+
+.expanded 
+{
+	height: 600px !important;
 }
