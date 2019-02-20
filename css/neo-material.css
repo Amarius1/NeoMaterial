@@ -763,7 +763,7 @@ i
   }
   .tabs:not(.categories)
   {
-
+    height: 45px !important;
     -ms-overflow-style: -ms-autohiding-scrollbar;
   }
   .tabs::-webkit-scrollbar * {
